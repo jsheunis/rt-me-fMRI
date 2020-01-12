@@ -1,0 +1,56 @@
+options:
+    mri_ext: PAR  # alternatives: PAR, DICOM (Philips enhanced dicom), dcm (Siemens dicom), nifti
+    debug: True
+    n_cores: -1
+    subject_stem: sub
+    deface: True
+    spinoza_data: False
+    out_dir: bids
+
+mappings:
+    bold: _SENSE
+    T1w: _T1W
+    dwi: _dwi
+    physio: _physio
+    events: _events
+
+metadata:
+    MagneticFieldStrength: 3
+    ParallelAcquisitionTechnique: SENSE
+    BIDSVersion: '1.1.0'
+    InstitutionName: Kempenhaeghe Epilepsy Center
+
+func:
+    rest1:
+        id: rest1
+        task: rest
+        run: 1
+        
+    rest2:
+        id: rest2
+        task: rest
+        run: 2
+        
+    motor-task1:
+        id: motor1
+        task: motor
+        run: 1
+
+    motor-task2:
+        id: motor2
+        task: motor
+        run: 2
+        
+    emotion-task1:
+        id: emotion1
+        task: emotion
+        run: 1
+        
+    emotion-task2:
+        id: emotion2
+        task: emotion
+        run: 2
+
+anat:
+    T1:
+        id: _T1W
