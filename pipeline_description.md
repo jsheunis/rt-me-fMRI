@@ -4,6 +4,9 @@ The main purpose of the study is to investigate methods to improve the quality o
 These improvements are for future applications in real-time fMRI neurofeedback, a method where participants are presented with visual or other feedback of their brain activity while they are inside the MRI scanner, and then asked to regulate the level of feedback.
 We have developed real-time multi-echo EPI acquisition sequences and processing methods, and this study aims to collect data from volunteers in order to validate these new methods.
 
+
+### Summarised study design
+
 While other possible methodological use cases of this data exist, the acquisition plan (i.e. the types, number and order of scans) was mainly designed to mirror that of an fMRI neurofeedback study, without providing feedback.
 
 For rtfMRI-NF studies we require prior information before starting real-time analysis. How do we know where and how to extract the neurofeedback signal? How do we define a template space within which to analyse data in real-time?
@@ -15,7 +18,65 @@ To get this prior information, we need to acquire and process extra scans before
 
 We are interested in seeing how real-time multi-echo fMRI can be used to improve the quality of the neurofeedback signal (using several metrics).
 We want to investigate this on a whole brain level, but we also focus on two regions interesting to the field of rtfMRI-NF: the motor cortex and amygdala.
-We have designed tasks to elicit BOLD responses in these areas during RUN 1, such that the derived ROIs can be used to analyse region-specific neurofeedback signals during the mentalized versions of the same tasks in RUN 2 . 
+We have designed tasks to elicit BOLD responses in these areas during RUN 1, such that the derived ROIs can be used to analyse region-specific neurofeedback signals during the mentalized versions of the same tasks in RUN 2 .
+
+
+### Research questions and outcomes
+
+Three paper approach?
+
+1. Data paper:
+    - gives data a DOI, dataset can be cited when used by other researchers
+    - fully describing data collection plan and procedure
+    - sharing BIDS data and materials
+    - gives summary of ethical approval and GDPR aspects
+    - running and visualising standard data quality measures
+    - other?
+2. Is multi-echo better than single echo for real-time use in ROI-driven neurofeedback, using metrics:
+    - tSNR (whole brain + ROI voxels + NF signal)
+    - tCNR (whole brain + ROI voxels + NF signal)
+    - Carpet plots (whole brain + ROI voxels)
+    - other?
+    
+    Additional goal of providing recommendations for real-time processing steps and shared code for community driven rtme-fMRI tool development
+3. Exploring the dynamics of combined echoes, T2* and S0 in real-time multi-echo resting state and task fMRI:
+    - Can we create a better real-time denoising pipeline using multi-echo parameter estimation and their relation to physiology?
+    - With specific interest in physiology signals
+    - Possibly looking into partial information decomposition: https://www.biorxiv.org/content/10.1101/596247v3.full
+    - other exploratory questions?
+
+#### Paper 1: Data
+
+*tbd*
+
+#### Paper 2: Main focus
+
+There are several ways to define and test for "improvement" of multi-echo vs single echo fMRI for rtfMRI-NF. We plan to investigate the following:
+
+1. Does real-time multi-echo combination help recover signal loss and improve temporal signal to noise ratio in:
+    1. Whole brain
+    2. Typical dropout areas
+    3. Regions of interest for neurofeedback (motor cortex and amygdala)
+    
+    If so, how much? And how do different combination methods compare?
+    
+    - *Create carpet plots of all timeseries*
+    - *Compare tSNR maps of single echo times eries with variety of combined echo time series*
+    - *Compare percentage difference in tSNR maps of single echo times eries with variety of combined echo time series*
+    - *Other possible measures:*
+        - *DVARS*
+        -  *?*
+
+2. Does real-time multi-echo combination and resulting T2* help improve the contrast to noise ratio for task-based neurofeedback? If so, how much? And how do different time series compare?
+    
+    - *Compare percentage signal change of regulation blocks vs baseline blocks within ROIs (all voxels) for all individual time series*
+    - *Create carpet plots of above* 
+    - *Compare percentage signal change of regulation blocks vs baseline blocks within ROIs (averaged signal, i.e. NF signal) for all individual time series*
+    
+
+#### Paper 3: Later focus
+
+*tbd*
 
 # Data:
 
@@ -33,6 +94,16 @@ Per subject, all of the following data were collected during one scan session (a
 | 8 | Stimulus timing | Peripheral measure | Stimulus and response timing for all tasks, i.e. x4 | Eprime .dat and .txt |
 | 9 | Physiology | Peripheral measure | Cardiac + respiratory traces for all runs, i.e. x6 | Philips "scanphyslog" |
 
+fMRI parameters:
+ - Philips Achieva 3T
+ - Multi-echo EPI sequence, no multi-band
+ - TR = 2 s
+ - 3 echoes
+ - TE = 14, 28, 42 ms (i.e. echo spacing = 14 ms)
+ - Voxel size 3.5 mm isotropic
+ - In-plane matrix = 64 x 64
+ - Slices = 34
+ - SENSE factor = 2.5
 
 # Data preparation
 
@@ -54,15 +125,24 @@ IMPORTANT:
 
 - [ ] Duplicate full BIDS directory and run processing in duplicate directory, so as not to touch clean BIDS dataset (which is for sharing)
 
-
 # Data analysis
 
 Existing / prepared data:
 - Atlases from SPM Anatomy Toolbox INM7, saved as separate NIfTIs
 
+## Open questions
 
+- This is strictly speaking an exploratory study and not hypothesis driven. I.e. would not make sense to specify hypothesis and report t and p values. Plan is to calculate improvements i.t.o. percentage difference, and plot distributions using raincloud plots. Sensible?
+- Should we test for ME improvements in RS? Or only task? Or both and compare?
+- Where to include drift removal?
+- How to approach masking for T2* and S0 estimation?
+- How to define task ROIs
+- Signal scaling: this is not explicitly applied anywhere except implicitly by SPM in the GLM analysis when creating functional localisers.
+Should we apply signal scaling (grand mean / something else?) at other points in the pipeline? Are we missing something? 
+- Where to submit?
+- Data paper?
+  
 ## Subject-level
-
 
 ### Pre-processing: anatomical (RUN 1)
 
@@ -99,7 +179,7 @@ Existing / prepared data:
     1. Slice time correction on all three echo timeseries
     2. 3D volume realignment on middle echo timeseries
     3. Apply rigid body transformations from middle echo realignment parameters to echo 1 and echo 3 timeseries
-    6. T2* and S0 estimation:
+    6. T2* and S0 estimation (*check steps of tedana*):
         1. *How to mask?*
         2. Calculate timeseries average
         3. Estimate T2* and S0 using log-linear fit of mono-exponential decay model
@@ -117,24 +197,50 @@ Do the following per time-point:
 1. Slice time correction on all three echoes
 2. 3D volume realignment on middle echo
 3. Apply rigid body transformations from middle echo realignment parameters to echo 1 and echo 3
-4. Real-time T2* and S0 estimation:
+4. *Drift removal?*
+5. Real-time T2* and S0 estimation:
     1. *How to mask?*
     3. Estimate T2* and S0 from current timepoint echoes using log-linear fit of mono-exponential decay model
     4. *Threshold?*
-5. Multi-echo combination:
-    1. Linear-weighted
+6. Multi-echo combination:
+    1. Linearly-weighted (*and/or summed?*)
     2. Pre-tSNR-weighted
     3. Pre-T2*-weighted
     4. Real-time T2*-weighted
-6. Calculate neurofeedback signal:
+7. Gaussian kernel smoothing (2 x voxel size?) of echo combinations, of T2* and of middle echo.
+8. Calculate neurofeedback signal using OpenNFT methodology:
+	1. Mask using 
+	2. Average within mask
+	3. Incremental GLM a la OpenNFT, includes:
+	    1. Low-pass filter / *drift removal?*
+	    2. AR(1) filter
+	    3. Motion parameters
+	    4. *what else?*
+	4. *(include Kalman filter? don't think we should)*
+	5. NFB trace (before and after OpenNFT scaling)
 
-Real-time pipeline for middle echo:
-    - realign (apply middle echo transform to all echoes - ask SPM mailing list)
-	- smooth
-	- GLM
-	- Kalman
-	- NFB trace (inspect to see if good PSC is observed)
+### Post real-time analysis:
 
+*Is this where signal scaling / normalisation needs to come in?*
+
+1. tSNR maps for following timeseries:
+    1. Middle echo
+    2. Combined: Linearly-weighted (*and/or summed?*)
+    3. Combined: Pre-tSNR-weighted
+    4. Combined: Pre-T2*-weighted
+    5. Combined: Real-time T2*-weighted
+    6. T2*
+2. Percentage difference maps for tSNR from middle echo to:
+    2. Combined: Linearly-weighted (*and/or summed?*)
+    3. Combined: Pre-tSNR-weighted
+    4. Combined: Pre-T2*-weighted
+    5. Combined: Real-time T2*-weighted
+3. Percentage difference maps for tSNR from middle echo to:
+    2. Combined: Linearly-weighted (*and/or summed?*)
+    3. Combined: Pre-tSNR-weighted
+    4. Combined: Pre-T2*-weighted
+    5. Combined: Real-time T2*-weighted
+3. Extract measures for ROIs
 
 
 ## Group level
@@ -152,6 +258,7 @@ WHAT TO COMPARE:
 
 # Quality control
 
+*Should this be reported as part of the *
 - MRIQC
 - Own quality checker scripts
 - Metrics to use:

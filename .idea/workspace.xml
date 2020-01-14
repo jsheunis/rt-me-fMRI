@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e574b482-676e-4e55-853a-832faa5df0d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/me_data_setup_workflow-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/me_data_setup_workflow-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/me_data_setup_workflow.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/me_data_setup_workflow.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pipeline_description.md" beforeDir="false" afterPath="$PROJECT_DIR$/pipeline_description.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +17,8 @@
         <entry file="file://$PROJECT_DIR$/pipeline_description.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="277">
-                <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
+              <first_editor relative-caret-position="319">
+                <caret line="237" column="3" selection-start-line="237" selection-start-column="3" selection-end-line="237" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -79,6 +79,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -107,12 +108,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578864366679</updated>
-      <workItem from="1578864371007" duration="12468000" />
+      <workItem from="1578864371007" duration="20325000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12468000" />
+    <option name="totallyTimeSpent" value="20325000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="716" extended-state="0" />
@@ -153,8 +154,8 @@
     <entry file="file://$PROJECT_DIR$/pipeline_description.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="277">
-            <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
+          <first_editor relative-caret-position="319">
+            <caret line="237" column="3" selection-start-line="237" selection-start-column="3" selection-end-line="237" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>
