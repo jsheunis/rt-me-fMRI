@@ -231,15 +231,15 @@ Do the following per time-point:
     5. Combined: Real-time T2*-weighted
     6. T2*
 2. Percentage difference maps for tSNR from middle echo to:
-    2. Combined: Linearly-weighted (*and/or summed?*)
-    3. Combined: Pre-tSNR-weighted
-    4. Combined: Pre-T2*-weighted
-    5. Combined: Real-time T2*-weighted
+    1. Combined: Linearly-weighted (*and/or summed?*)
+    2. Combined: Pre-tSNR-weighted
+    3. Combined: Pre-T2*-weighted
+    4. Combined: Real-time T2*-weighted
 3. Percentage difference maps for tSNR from middle echo to:
-    2. Combined: Linearly-weighted (*and/or summed?*)
-    3. Combined: Pre-tSNR-weighted
-    4. Combined: Pre-T2*-weighted
-    5. Combined: Real-time T2*-weighted
+    1. Combined: Linearly-weighted (*and/or summed?*)
+    2. Combined: Pre-tSNR-weighted
+    3. Combined: Pre-T2*-weighted
+    4. Combined: Real-time T2*-weighted
 3. Extract measures for ROIs
 
 
@@ -258,16 +258,18 @@ WHAT TO COMPARE:
 
 # Quality control
 
-*Should this be reported as part of the *
-- MRIQC
+*Idea is for this to be reported as part of the Data Paper*
+
+- MRIQC from BIDS (derivatives)
 - Own quality checker scripts
-- Metrics to use:
+- Extra metrics to report:
 	- physiology between conditions
-- Real-time quality checking:??
+- Real-time quality control metrics (from rtQC):
 	- FD
+	- other?
 
 # TODO:
-- [x] send processing plan to cesar + sveta + lydia + Jaap + Willem
+- [x] send processing plan to cesar + sveta + lydia + Jaap
 - [ ] Get paper+code of Soroosh Insights into DVARS
 - [ ] Pybids for handling BIDS datasets
 
