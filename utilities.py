@@ -18,16 +18,25 @@ def appendRowToDf(main_df, block_df, event_type, txt_col):
     return main_df
 
 def appendRowToDfProblem(main_df, block_df, event_type, txt_col):
-    main_df = main_df.append({'type':event_type,
-                            'onset':np.nan,
-                            'OnsetToOnsetTime':np.nan,
-                            'response':np.nan,
-                            'RT':np.nan,
-                            'OnsetDelay':np.nan}, ignore_index = True)
+    # ['onset', 'duration', 'response_time', 'button_pressed', 'trial_type']
+    onset = np.nan
+    duration = np.nan
+    rt = np.nan
+    bp = np.nan
+    # duration = 2008.0
+    # duration = np.round(duration/1000, 3)
+    # rt = np.round(block_df[txt_col + '.RT']/1000, 3)
+    # block_df[txt_col + '.RESP']
+
+    main_df = main_df.append({'onset':onset,
+                            'duration':duration,
+                            'response_time':rt,
+                            'button_pressed':bp,
+                            'trial_type':event_type}, ignore_index = True)
     return main_df
 
 
-def create_event_files(all_dfs, paradigms, dct_df):
+def create_event_files(all_dfs, paradigms, dct_df, sub):
     ## 3. Extract necessary data from dataframes, reorder into sensible blocks, write to text file
     ## 3.1) Motor, motor-imagine, and emotion-imagine (same structure or eprime files)
 
@@ -41,26 +50,24 @@ def create_event_files(all_dfs, paradigms, dct_df):
     keys = ['df0', 'df1', 'df2', 'df3']
 
     for p in [0,1,3]:
-        df = all_dfs[paradigms[p]]
-        # print(df)
-        columns = ['onset', 'duration', 'trial_type']
-        events3_df = pd.DataFrame(columns=columns)
 
-        for i in np.arange(10):
-            rest_onset = np.round(df.loc[i, 'Rest.OnsetTime']/1000, 3)
-            task_onset = np.round(df.loc[i, 'Tap.OnsetTime']/1000, 3)
+        if not sub == 'sub-001':
+            df = all_dfs[paradigms[p]]
+            # print(df)
+            columns = ['onset', 'duration', 'trial_type']
+            events3_df = pd.DataFrame(columns=columns)
+
+            for i in np.arange(10):
+                rest_onset = np.round(df.loc[i, 'Rest.OnsetTime']/1000, 3)
+                task_onset = np.round(df.loc[i, 'Tap.OnsetTime']/1000, 3)
+                events3_df = events3_df.append({'onset': rest_onset, 'duration': 20, 'trial_type': 'Rest'}, ignore_index=True)
+                events3_df = events3_df.append({'onset': task_onset, 'duration': 20, 'trial_type': task[p]}, ignore_index=True)
+
+            rest_onset = np.round(df.loc[10, 'LastRest.OnsetTime']/1000, 3)
             events3_df = events3_df.append({'onset': rest_onset, 'duration': 20, 'trial_type': 'Rest'}, ignore_index=True)
-            events3_df = events3_df.append({'onset': task_onset, 'duration': 20, 'trial_type': task[p]}, ignore_index=True)
+            events3_df['onset'] = np.round(events3_df['onset'] - events3_df.loc[0,'onset'], 3)
 
-        rest_onset = np.round(df.loc[10, 'LastRest.OnsetTime']/1000, 3)
-        events3_df = events3_df.append({'onset': rest_onset, 'duration': 20, 'trial_type': 'Rest'}, ignore_index=True)
-        events3_df['onset'] = np.round(events3_df['onset'] - events3_df.loc[0,'onset'], 3)
-
-        dct_df[keys[p]] = events3_df
-
-        # events3_df.to_csv(event_files[p], index=False)
-        # print(task[p])
-        # print(events3_df)
+            dct_df[keys[p]] = events3_df
 
     ## 3.2) Emotion
 
@@ -118,8 +125,9 @@ def create_event_files(all_dfs, paradigms, dct_df):
 
 
     # (2) Test some (potentially problematic) blocks; in sub-001, these are likely still problems: ShapesCue0, FacesCue2
-    # print(all_blocks[0]['shape1'])
-    # print(all_blocks[2]['face1'])
+    # if sub == 'sub-001':
+    #     print(all_blocks[0]['shape1'])
+    #     print(all_blocks[2]['face1'])
 
     # (3) Add rows of data iteratively to new dataframe, and write dataframe to "events" file
     columns = ['onset', 'duration', 'response_time', 'button_pressed', 'trial_type']
@@ -143,10 +151,6 @@ def create_event_files(all_dfs, paradigms, dct_df):
         event_type = 'CueShapes'
         txt_col = 'ShapesCue' + txt
         events1_df = appendRowToDf(events1_df, block_df, event_type, txt_col)
-    #     if i in [0]:
-    #         events1_df = appendRowToDfProblem(events1_df, block_df, event_type, txt_col)
-    #     else:
-    #         events1_df = appendRowToDf(events1_df, block_df, event_type, txt_col)
 
         event_type = 'Shapes'
         txt_col = 'Shape' + txt
@@ -168,11 +172,14 @@ def create_event_files(all_dfs, paradigms, dct_df):
 
             event_type = 'CueFaces'
             txt_col = 'FacesCue' + txt
-            events1_df = appendRowToDf(events1_df, block_df, event_type, txt_col)
-    #         if i in [2]:
-    #             events1_df = appendRowToDfProblem(events1_df, block_df, event_type, txt_col)
-    #         else:
-    #             events1_df = appendRowToDf(events1_df, block_df, event_type, txt_col)
+
+            if sub == 'sub-001':
+                if i in [2]:
+                    events1_df = appendRowToDfProblem(events1_df, block_df, event_type, txt_col)
+                else:
+                    events1_df = appendRowToDf(events1_df, block_df, event_type, txt_col)
+            else:
+                events1_df = appendRowToDf(events1_df, block_df, event_type, txt_col)
 
             event_type = 'Faces'
             txt_col = 'Face' + txt
@@ -189,7 +196,5 @@ def create_event_files(all_dfs, paradigms, dct_df):
                 events1_df = appendRowToDf(events1_df, block_df, event_type, txt_col)
 
     dct_df[keys[2]] = events1_df
-    # print(events1_df)
-    # events1_df.to_csv(event_files[2], index=False)
 
     return dct_df
