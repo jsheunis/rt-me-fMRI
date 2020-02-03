@@ -144,6 +144,9 @@ Should we apply signal scaling (grand mean / something else?) at other points in
   
 ## Subject-level
 
+- Preproc for getting prior estimates of T2* and S0
+- Preproc for getting functional
+
 ### Pre-processing: anatomical (RUN 1)
 
 1. Anatomical to functional space coregistration, use middle echo first volume as template - SPM12 coregister estimate
