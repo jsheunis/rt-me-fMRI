@@ -9,7 +9,7 @@ defaults.deriv_dir = '/Volumes/Stephan_WD/NEUFEPME_data_BIDS_derivatives'; % Spe
 defaults.preproc_dir = fullfile(defaults.deriv_dir, 'SPM12preproc');
 defaults.template_dir = '/Volumes/Stephan_WD/NEUFEPME_data_templates'; % Specify processing directory
 
-% Study parameters
+% Study and analysis parameters
 defaults.tasks = ['rest', 'motor', 'emotion'];
 defaults.template_task = 'rest';
 defaults.template_run = 1;
@@ -22,15 +22,16 @@ defaults.ROI_fns{1} = fullfile(defaults.template_dir, 'Left_Motor_4a_4p.nii.gz')
 defaults.ROI_fns{2} = fullfile(defaults.template_dir, 'Bilateral_Amygdala_allregions.nii.gz');
 
 % Scanning parameters
-defaults.Ne = 3; % number of echoes per volume
+defaults.N_e = 3; % number of echoes per volume
 defaults.TE = [14 28 42]; % Echo times in ms
+defaults.N_slices = 34;
 % T2star_thresh = 100; % threshold for maximum T2star after estimation
 defaults.voxel_size = [3.5 3.5 3.5];
 defaults.smoothing_kernel    = [7 7 7];
-defaults.Nt =   208; % NrOfVolumes % VolumesNumber
+defaults.N_t =   210; % NrOfVolumes % VolumesNumber
 defaults.N_skip = 0; % nrSkipVol
 defaults.N_start = N_skip + 1;
-defaults.Ndyn = Nt - N_skip;
+defaults.N_dyn = N_t - N_skip;
 defaults.TR = 2;
 defaults.TR_skip = 2; % amount of TRs to skip at start of baseline block to exclude effect of HRF on baseline mean calculation
 defaults.NF_cond = 2; % location of task/nf condition in design matrix (SPM structure)
@@ -61,13 +62,13 @@ defaults.NF_cond = 2; % location of task/nf condition in design matrix (SPM stru
 % ROI_fns = cell(1,N_ROIs);
 % ROI_fns{1} = [sub_dir filesep 'lROI_1.nii'];
 % ROI_fns{2} = [sub_dir filesep 'rROI_2.nii'];
-% Ne = 1; % number of EPI echoes
+% N_e = 1; % number of EPI echoes
 % voxel_size = [2.973 2.973 3.75];
 % smoothing_kernel    = [6 6 6];
-% Nt =   155; % NrOfVolumes % VolumesNumber
+% N_t =   155; % NrOfVolumes % VolumesNumber
 % N_skip = 5; % nrSkipVol
 % N_start = N_skip + 1;
-% Ndyn = Nt - N_skip;
+% N_dyn = N_t - N_skip;
 % TR = 2;
 % TR_skip = 2; % amount of TRs to skip at start of baseline block to exclude effect of HRF on baseline mean calculation
 % NF_cond = 2; % location of task/nf condition in design matrix (in SPM.mat structure)

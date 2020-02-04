@@ -15,22 +15,34 @@ src = fullfile(defaults.bids_dir, sub);
 dest = fullfile(defaults.preproc_dir, sub);
 copyfile(src, dest);
 
-% Step 1: structural-functional-preproc:    - rtme_preproc_structFunc.m
+% Step 0: create template functional volume nifti
+preproc_dir = defaults.preproc_dir;
+template_run = defaults.template_run;
+template_task = defaults.template_task;
+template_echo = defaults.template_echo;
+functional0_fn = fullfile(preproc_dir, sub, 'func', [sub '_task-' template_task '_run-' template_run '_echo-' template_echo '_bold.nii,1']);
+template_vol = fullfile(preproc_dir, sub, 'func', [sub '_task-' template_task '_run-' template_run '_echo-' template_echo '_bold_template.nii']);
+rtme_util_saveNifti(functional0_fn, spm_read_vols(spm_vol(functional0_fn)), template_vol, 'Template functional volume', 0)
 
+% Step 1: structural-functional-preproc:    - rtme_preproc_structFunc.m
 rtme_preproc_structFunc(sub, defaults);
 
-% Step 2: anatomical-localizer-preproc:     - rtme_preproc_anatLocaliser.m
+% Step 2: basic-functional-preproc:    - rtme_preproc_basicFunc.m
+rtme_preproc_basicFunc(sub, defaults);
+
+
+% Step 3: anatomical-localizer-preproc:     - rtme_preproc_anatLocaliser.m
 rtme_preproc_anatLocaliser(sub, defaults);
 
-% Step 3: functional-localizer-preproc:     - rtme_preproc_funcLocalizer.m
+% Step 3: functional-localizer-preproc:     - rtme_preproc_funcLocaliser.m
 %                                           - rtme_preproc_generateRegressors.m
 %                                           - rtme_preproc_generateRetroicor.m
 %                                           - rtme_preproc_generateFDregr.m
 %                                           - rtme_preproc_generateTissueSignals.m
-
+rtme_preproc_funcLocaliser(sub, defaults);
 
 % Step 4: calculate-prior-measures-preproc - rtme_preproc_estimateParams.m
-
+rtme_preproc_estimateParams(sub, defaults);
 
 
 % Step X: quality-preproc - rtme_preproc_qualityControl.m

@@ -13,12 +13,19 @@
 % structural image into tissue types, and reslicing the segments to the
 % functional resolution image grid. Makes use of spm12 batch routines.
 % If spm12 batch parameters are not explicitly set, defaults are assumed.
-%
+
+% STEPS:
+% 1. Anatomical to functional space coregistration, use middle echo first volume rest run 1 as template - SPM12 coregister estimate
+% 2. Segment coregistered anatomical image into tissue components - SPM12 unified segmentation
+%     - Saves inverse transform from subject functional to MNI space
+% 3. Reslice all to functional space grid (SPM reslice)
+% 4. Create tissue compartment and whole brain masks
+
 % INPUT:
 % funcional0_fn     - filename of initial pre-real-time 3D functional volume template
 % structural_fn     - filename of T1-weighted structural volume
 % spm_dir           - SPM12 directory
-%
+
 % OUTPUT:
 % output            - structure with filenames and data
 
@@ -26,11 +33,7 @@
 % STEPS
 %--------------------------------------------------------------------------
 
-% 1. Anatomical to functional space coregistration, use middle echo first volume rest run 1 as template - SPM12 coregister estimate
-% 2. Segment coregistered anatomical image into tissue components - SPM12 unified segmentation
-%     1. Saves inverse transform from subject functional to MNI space
-% 4. Reslice all to functional space grid (SPM reslice)
-% 5. Create tissue compartment and whole brain masks
+
 
 %--------------------------------------------------------------------------
 
@@ -45,7 +48,7 @@ template_echo = defaults.template_echo;
 
 % Grab files for preprocessing
 % (Functional template is first volume of rest_run-1)
-functional0_fn = fullfile(preproc_dir, sub, 'func', [sub '_task-' template_task '_run-' template_run '_echo' template_echo 'bold.nii,1']);
+template_vol = fullfile(preproc_dir, sub, 'func', [sub '_task-' template_task '_run-' template_run '_echo-' template_echo '_bold_template.nii']);
 structural_fn = fullfile(preproc_dir, sub, 'anat', [sub '_T1w.nii']);
 
 % Structure to save outputs
@@ -58,7 +61,7 @@ spm('defaults','fmri');
 spm_jobman('initcfg');
 coreg_estimate = struct;
 % Ref
-coreg_estimate.matlabbatch{1}.spm.spatial.coreg.estimate.ref = {functional0_fn};
+coreg_estimate.matlabbatch{1}.spm.spatial.coreg.estimate.ref = {template_vol};
 % Source
 coreg_estimate.matlabbatch{1}.spm.spatial.coreg.estimate.source = {structural_fn};
 % Other
@@ -122,7 +125,7 @@ spm('defaults','fmri');
 spm_jobman('initcfg');
 reslice = struct;
 % Ref
-reslice.matlabbatch{1}.spm.spatial.coreg.write.ref = {functional0_fn};
+reslice.matlabbatch{1}.spm.spatial.coreg.write.ref = {template_vol};
 % Source
 source_fns = {};
 source_fns{1} = structural_fn;
@@ -130,12 +133,12 @@ source_fns{1} = structural_fn;
 for i = 2:7
     source_fns{i} = [d filesep 'c' num2str(i-1) fn ext];
 end
-reslice.matlabbatch{1}.spm.spatial.coreg.write.source = source_fns';
+reslice.matlabbatch{1}.spm.spatial.realign.write.data = source_fns';
 % Roptions
-reslice.matlabbatch{1}.spm.spatial.coreg.write.roptions.interp = 4;
-reslice.matlabbatch{1}.spm.spatial.coreg.write.roptions.wrap = [0 0 0];
-reslice.matlabbatch{1}.spm.spatial.coreg.write.roptions.mask = 0;
-reslice.matlabbatch{1}.spm.spatial.coreg.write.roptions.prefix = 'r';
+reslice.matlabbatch{1}.spm.spatial.realign.write.roptions.interp = 4;
+reslice.matlabbatch{1}.spm.spatial.realign.write.roptions.wrap = [0 0 0];
+reslice.matlabbatch{1}.spm.spatial.realign.write.roptions.mask = 0;
+reslice.matlabbatch{1}.spm.spatial.realign.write.roptions.prefix = 'r';
 % Run
 spm_jobman('run',reslice.matlabbatch);
 % Save filenames
@@ -159,10 +162,10 @@ disp('4 - Construct GM, WM, CSF and whole brain (GM+WM+CSF) masks');
 % combine binary images of all tissue types to generate mask
 output.brain_img_bin = output.GM_img_bin | output.WM_img_bin | output.CSF_img_bin;
 % save masks to file: rtme_util_saveNifti(template_fn, img, new_fn, descrip)
-rtme_util_saveNifti(functional0_fn, output.GM_img_bin, fullfile(preproc_dir, sub, 'anat', [sub '_mask-GM.nii']), 'GM mask')
-rtme_util_saveNifti(functional0_fn, output.WM_img_bin, fullfile(preproc_dir, sub, 'anat', [sub '_mask-WM.nii']), 'WM mask')
-rtme_util_saveNifti(functional0_fn, output.CSF_img_bin, fullfile(preproc_dir, sub, 'anat', [sub '_mask-CSF.nii']), 'CSF mask')
-rtme_util_saveNifti(functional0_fn, output.brain_img_bin, fullfile(preproc_dir, sub, 'anat', [sub '_mask-brain.nii']), 'Brain mask')
+rtme_util_saveNifti(template_vol, output.GM_img_bin, fullfile(preproc_dir, sub, 'anat', [sub '_mask-GM.nii']), 'GM mask')
+rtme_util_saveNifti(template_vol, output.WM_img_bin, fullfile(preproc_dir, sub, 'anat', [sub '_mask-WM.nii']), 'WM mask')
+rtme_util_saveNifti(template_vol, output.CSF_img_bin, fullfile(preproc_dir, sub, 'anat', [sub '_mask-CSF.nii']), 'CSF mask')
+rtme_util_saveNifti(template_vol, output.brain_img_bin, fullfile(preproc_dir, sub, 'anat', [sub '_mask-brain.nii']), 'Brain mask')
 % get vector of indices for mask
 output.I_brain = find(output.brain_img_bin);
 % Determine some descriptive variables

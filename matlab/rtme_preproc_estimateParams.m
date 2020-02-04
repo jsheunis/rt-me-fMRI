@@ -1,28 +1,74 @@
+% FUNCTION: rtme_preproc_estimateParams
+%--------------------------------------------------------------------------
 
+% Copyright statement....
+
+%--------------------------------------------------------------------------
+% DEFINITION
+%--------------------------------------------------------------------------
 
 %% Calculate tSNR, T2* and S0 from full multi-echo timeseries data
 % This is done in order to get an estimate of whole brain tSNR and T2*
 % (pre-real-time), which are both used for real-time weighted
 % multi-echo-combination (methods i and ii, respectively, from the
 % poster).
-disp('STEP 2: ESTIMATE tSNR, T2STAR AND S0 MAPS')
-cd([data_dir filesep subj_dir]);
+%
+% STEPS:
+% 1.
+%
+% INPUT:
+%
+% OUTPUT:
+%
+%--------------------------------------------------------------------------
+
+
+function output = rtme_preproc_estimateParams(sub, defaults)
+
+% Load required defaults
+spm_dir = defaults.spm_dir;
+preproc_dir = defaults.preproc_dir;
+template_run = defaults.template_run;
+template_task = defaults.template_task;
+template_echo = defaults.template_echo;
+N_e = defaults.N_e;
+TE = defaults.TE;
+N_vol = defaults.N_vol;
+TR = defaults.TR;
+N_slices = defaults.N_slices;
+
+% Grab files for preprocessing
+% (Functional template is first volume of rest_run-1)
+functional0_fn = fullfile(preproc_dir, sub, 'func', [sub '_task-' template_task '_run-' template_run '_echo-' template_echo '_bold.nii,1']);
+structural_fn = fullfile(preproc_dir, sub, 'anat', [sub '_T1w.nii']);
+
+% Structure to save outputs
+output = struct;
+
 % Create empty arrays
-F = cell(Ne,1);
-F_ave2D = cell(Ne,1);
-F_ave = cell(Ne,1);
-F_tSNR2D = cell(Ne,1);
-F_tSNR = cell(Ne,1);
-Ndyn = Nt - Nskip; % Number of dynamics to use
+F = cell(N_e,1);
+F_ave2D = cell(N_e,1);
+F_ave = cell(N_e,1);
+F_tSNR2D = cell(N_e,1);
+F_tSNR = cell(N_e,1);
+
+
+% STEP 1 --
+
+
+
+
+
+
 
 % First calculate tSNR per echo timeseries, which is the timeseries
 % mean divided by the standard deviation of the timeseries
-for e = 1:Ne
+for e = 1:N_e
     disp(['tSNR for echo ' num2str(e)])
     F{e} = spm_read_vols(spm_vol(rf_me_fn{e}));
-    F_ave2D{e} = mean(reshape(F{e},Ni*Nj*Nk, Ndyn), 2);
+    F_ave2D{e} = mean(reshape(F{e},Ni*Nj*Nk, N_vol), 2);
     F_ave{e} = reshape(F_ave2D{e}, Ni, Nj, Nk);
-    F_tSNR2D{e} = F_ave2D{e}./std(reshape(F{e},Ni*Nj*Nk, Ndyn), 0, 2);
+    F_tSNR2D{e} = F_ave2D{e}./std(reshape(F{e},Ni*Nj*Nk, N_vol), 0, 2);
     F_tSNR{e} = reshape(F_tSNR2D{e}, Ni, Nj, Nk);
 end
 
@@ -30,7 +76,7 @@ disp('T2star and S0 estimation')
 % Then estimate T2* and SO using log linear regression of a simplified
 % magnetic signal decay equation (see references in poster) to the data
 % derived from averaging the three echo timeseries.
-X_pre=[ones(Ne,1) -TE(:)];
+X_pre=[ones(N_e,1) -TE(:)];
 S0_pre = zeros(Nvox,1);
 T2star_pre = zeros(Nvox,1);
 T2star_pre_corrected = T2star_pre;
