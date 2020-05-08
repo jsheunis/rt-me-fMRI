@@ -1,4 +1,4 @@
-function output = rtme_preproc_smooth(functional_fn, prefix, fwhm, defaults)
+function output = rtme_preproc_smooth(functional_fn, prefix, defaults)
 
 % Load required defaults
 TR = defaults.TR;

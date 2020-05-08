@@ -36,10 +36,10 @@ TE = defaults.TE;
 N_vol = defaults.N_vol;
 TR = defaults.TR;
 N_slices = defaults.N_slices;
+prefix = [defaults.defaults.realign_prefix defaults.stc_prefix];
 
 % Grab files for preprocessing
-% (Functional template is first volume of rest_run-1)
-functional0_fn = fullfile(preproc_dir, sub, 'func', [sub '_task-' template_task '_run-' template_run '_echo-' template_echo '_bold.nii,1']);
+%functional0_fn = fullfile(preproc_dir, sub, 'func', [prefix sub '_task-' template_task '_run-' num2str(template_run) '_echo-' num2str(template_echo) '_bold.nii,1']);
 structural_fn = fullfile(preproc_dir, sub, 'anat', [sub '_T1w.nii']);
 
 % Structure to save outputs
@@ -51,7 +51,6 @@ F_ave2D = cell(N_e,1);
 F_ave = cell(N_e,1);
 F_tSNR2D = cell(N_e,1);
 F_tSNR = cell(N_e,1);
-
 
 % STEP 1 --
 

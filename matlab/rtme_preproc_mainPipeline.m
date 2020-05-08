@@ -4,13 +4,11 @@
 defaults = me_defaults;
 
 % Subject
-
 sub = 'sub-001';
 
 %% Individual, pre-real-time preproc
 
 % Step 0: create necessary directory structure and copy required files
-
 src = fullfile(defaults.bids_dir, sub);
 dest = fullfile(defaults.preproc_dir, sub);
 copyfile(src, dest);
@@ -30,31 +28,33 @@ rtme_preproc_structFunc(sub, defaults);
 % Step 2: basic-functional-preproc:    - rtme_preproc_basicFunc.m
 rtme_preproc_basicFunc(sub, defaults);
 
-
 % Step 3: anatomical-localizer-preproc:     - rtme_preproc_anatLocaliser.m
 rtme_preproc_anatLocaliser(sub, defaults);
 
-% Step 3: functional-localizer-preproc:     - rtme_preproc_funcLocaliser.m
-%                                           - rtme_preproc_generateRegressors.m
-%                                           - rtme_preproc_generateRetroicor.m
-%                                           - rtme_preproc_generateFDregr.m
-%                                           - rtme_preproc_generateTissueSignals.m
-rtme_preproc_funcLocaliser(sub, defaults);
-
-% Step 4: calculate-prior-measures-preproc - rtme_preproc_estimateParams.m
-rtme_preproc_estimateParams(sub, defaults);
-
-
 % Step X: quality-preproc - rtme_preproc_qualityControl.m
+fmrwhy_qc_workflow(sub, defaults);
 
-
-
-% TODO:
-% 1) inside each function, add code to create necessary directory structure in bids_deriv folder, and copy required files,
-% if these do not exist yet:
-
-
-
+%
+%% Step 3: functional-localizer-preproc:     - rtme_preproc_funcLocaliser.m
+%%                                           - rtme_preproc_generateRegressors.m
+%%                                           - rtme_preproc_generateRetroicor.m
+%%                                           - rtme_preproc_generateFDregr.m
+%%                                           - rtme_preproc_generateTissueSignals.m
+%for t = 1:numel(defaults.tasks)
+%%    disp(['Performing 3D volume realignment for: ' sub '_task-' tasks(t) '_run-' num2str(template_run)])
+%    rtme_preproc_funcLocaliser(sub, task, template_run, template_echo, defaults)
+%end
+%
+%
+%% Step 4: calculate-prior-measures-preproc - rtme_preproc_estimateParams.m
+%rtme_preproc_estimateParams(sub, defaults);
+%
+%
+%
+%
+%
+%
+%
 
 
 
