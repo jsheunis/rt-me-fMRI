@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e574b482-676e-4e55-853a-832faa5df0d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/fmri_basics-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/fmri_basics-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fmri_basics.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/fmri_basics.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matlab/rtme_defaults.m" beforeDir="false" afterPath="$PROJECT_DIR$/matlab/rtme_defaults.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matlab/rtme_preproc_basicFunc.m" beforeDir="false" afterPath="$PROJECT_DIR$/matlab/rtme_preproc_basicFunc.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matlab/rtme_preproc_estimateParams.m" beforeDir="false" afterPath="$PROJECT_DIR$/matlab/rtme_preproc_estimateParams.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matlab/rtme_preproc_funcLocaliser.m" beforeDir="false" afterPath="$PROJECT_DIR$/matlab/rtme_preproc_funcLocaliser.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matlab/rtme_preproc_mainPipeline.m" beforeDir="false" afterPath="$PROJECT_DIR$/matlab/rtme_preproc_mainPipeline.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matlab/rtme_preproc_realignME.m" beforeDir="false" afterPath="$PROJECT_DIR$/matlab/rtme_preproc_realignME.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matlab/rtme_preproc_smooth.m" beforeDir="false" afterPath="$PROJECT_DIR$/matlab/rtme_preproc_smooth.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matlab/rtme_preproc_structFunc.m" beforeDir="false" afterPath="$PROJECT_DIR$/matlab/rtme_preproc_structFunc.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/me_data_setup_workflow.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/me_data_setup_workflow.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +16,7 @@
         <entry file="file://$PROJECT_DIR$/pipeline_description.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="107">
+              <first_editor relative-caret-position="3825">
                 <caret line="255" column="9" selection-start-line="255" selection-start-column="6" selection-end-line="255" selection-end-column="9" />
               </first_editor>
               <second_editor />
@@ -35,7 +24,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preproc_qc_description.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -45,6 +34,16 @@
               <second_editor />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_scanphyslog2bids.ipynb">
+          <provider selected="true" editor-type-id="jupyter-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/me_data_setup_workflow.ipynb">
+          <provider selected="true" editor-type-id="jupyter-editor" />
         </entry>
       </file>
     </leaf>
@@ -69,6 +68,7 @@
       <find>spm_read</find>
       <find>os.</find>
       <find>T2star</find>
+      <find>pd</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,7 +111,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="719" />
@@ -124,6 +124,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="rtme-fMRI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rtme-fMRI" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Changed Files'; set:Changed Files; ALL; class com.intellij.packageDependencies.ChangeListScope">
           <expand>
@@ -135,17 +146,6 @@
               <item name="rtme-fMRI" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="~/Documents/PYTHON/rtme-fMRI" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="matlab" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="rtme-fMRI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rtme-fMRI" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -198,17 +198,18 @@
       <workItem from="1582642101136" duration="1842000" />
       <workItem from="1584716513839" duration="1610000" />
       <workItem from="1584994595858" duration="14355000" />
+      <workItem from="1588950557214" duration="1125000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168445000" />
+    <option name="totallyTimeSpent" value="169570000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="719" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="714" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18497577" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18739903" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -309,9 +310,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/me_data_setup_workflow.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/matlab/rtme_preproc_basicFunc.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -364,16 +362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pipeline_description.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="107">
-            <caret line="255" column="9" selection-start-line="255" selection-start-column="6" selection-end-line="255" selection-end-column="9" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/matlab/neufepme_main.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -401,6 +389,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pipeline_description.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="3825">
+            <caret line="255" column="9" selection-start-line="255" selection-start-column="6" selection-end-line="255" selection-end-column="9" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/preproc_qc_description.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -410,6 +408,12 @@
           <second_editor />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_scanphyslog2bids.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/me_data_setup_workflow.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
     </entry>
   </component>
 </project>
