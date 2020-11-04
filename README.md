@@ -6,7 +6,7 @@
 [![Cite this work](https://img.shields.io/badge/cite-Methods%20paper-green.svg)]() 
 [![Reproduce figures](https://img.shields.io/badge/reproduce-Figures%20(data%20paper)-red.svg)]() 
 [![Reproduce figures](https://img.shields.io/badge/reproduce-Figures%20(methods%20paper)-orange.svg)]() 
-[![Reproduce results](https://img.shields.io/badge/reproduce-Results%20(data%20paper)-blueviolet.svg)]() 
+[![Reproduce results](https://img.shields.io/badge/reproduce-Results%20(methods%20paper)-blueviolet.svg)]() 
 
 
 ## Overview
