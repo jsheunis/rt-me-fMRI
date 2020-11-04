@@ -3,9 +3,10 @@
 [![Download the dataset from DataverseNL](https://img.shields.io/badge/download-BIDS%20dataset-9cf.svg)]() 
 [![Explore the data interactively](https://img.shields.io/badge/explore-Interactive%20Web%20App-ff69b4.svg)]()
 [![Cite this work](https://img.shields.io/badge/cite-Data%20paper-brightgreen.svg)]() 
-[![Reproduce figures](https://img.shields.io/badge/reproduce-Figures%20(data%20paper)-red.svg)]() 
 [![Cite this work](https://img.shields.io/badge/cite-Methods%20paper-green.svg)]() 
+[![Reproduce figures](https://img.shields.io/badge/reproduce-Figures%20(data%20paper)-red.svg)]() 
 [![Reproduce figures](https://img.shields.io/badge/reproduce-Figures%20(methods%20paper)-orange.svg)]() 
+[![Reproduce results](https://img.shields.io/badge/reproduce-Results%20(data%20paper)-blueviolet.svg)]() 
 
 
 ## Overview
