@@ -90,35 +90,35 @@ $$
 Simple echo summation assumes equal weights for all echoes (totaling $N$), which is calculated for an individual echo $n$ as:
 
 $$
-w(SUM)_{n}=\frac{1}{N}
+w_{n}^{SUM}=\frac{1}{N}
 $$
 
 The $T_{2}^{\ast}$-weighted combination scheme used by Posse et al. (1999) and termed "optimal combination" by Kundu et al. (2012), calculates the individual echo weights $w_{n}$:
 
 $$
-w\left(T_{2}^{\star}\right)_{n}=\frac{TE_{n} \cdot \exp \left(-T E_{n} / T_{2}^{*}\right)}{\sum_{n=1}^{N} TE_{n} \cdot \exp \left(-TE_{n} / T_{2}^{*}\right)}
+w_{n}^{T_{2}^{\ast}}=\frac{TE_{n} \cdot \exp \left(-T E_{n} / T_{2}^{*}\right)}{\sum_{i=1}^{N} TE_{i} \cdot \exp \left(-TE_{i} / T_{2}^{*}\right)}
 $$
 
 The PAID method put forward by Poser et al. (2006) uses the voxel-based tSNR measures at each echo as the weights:
 
 $$
-w(tSNR)_{n}=\frac{tSNR_{n} \cdot TE_{n}}{\sum_{n=1}^{N} tSNR_{n} \cdot T E_{n}}
+w_{n}^{tSNR}=\frac{tSNR_{n} \cdot TE_{n}}{\sum_{i=1}^{N} tSNR_{i} \cdot T E_{i}}
 $$
 
 Using each echo's echo time, $TE_{n}$, as the weight for that echo has also been used:
 
 $$
-w(TE)_{n}=\frac{TE_{n}}{\sum_{n=1}^{N} TE_{n}}
+w_{n}^{TE}=\frac{TE_{n}}{\sum_{i=1}^{N} TE_{i}}
 $$
 
 $$
-w(W)_{n}=\frac{W_{n}}{\sum_{n=1}^{N} W_{n}}
+w_{n}^{SW}=\frac{SW_{n}}{\sum_{i=1}^{N} SW_{i}}
 $$
 
 Finally, as proposed in the introduction the per-volume estimation of $T_{2}^{\ast}$ at each voxel, also termed $T_{2 FIT}^{\ast}$, can also be used as the weighting factor in a per-volume echo comination scheme:
 
 $$
-w\left(T_{2 FIT}^{\star}\right)_{n}=\frac{TE_{n} \cdot \exp \left(-T E_{n} / T_{2 FIT}^{*}\right)}{\sum_{n=1}^{N} TE_{n} \cdot \exp \left(-TE_{n} / T_{2 FIT}^{*}\right)}
+w_{n}^{T_{2}^{\ast}FIT}=\frac{TE_{n} \cdot \exp \left(-T E_{n} / T_{2}^{*}FIT\right)}{\sum_{i=1}^{N} TE_{i} \cdot \exp \left(-TE_{i} / T_{2}^{*}FIT\right)}
 $$
 
 

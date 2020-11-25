@@ -393,6 +393,8 @@ for i = 1:Nt
             S(roi).R = 1.95*tmpStd^2;
             kalmThreshold = 0.9*tmpStd;
 
+
+            % IMPORTANT THIS PART WAS ONLY PUT HERE TO DEAL WITH ISSUES FROM A PROBLEM SUBJECT: 11 OR 12?????? CHECK OUTPUT DATES TO SEE WHICH ONE, BECAUSE IT WAS RUN LAST
             if (roi==6)
                 kalmanProcTimeSeries{sig}(roi,j) = glmProcTimeSeries{sig}(roi, j);
             else
