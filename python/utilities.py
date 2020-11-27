@@ -87,3 +87,39 @@ def reset_realtime_summary_img(fig, data_dir, cnr_opt, task, cluster_opt, psc_op
         fig.update_layout(xaxis_showgrid=True, yaxis_showgrid=True, xaxis_zeroline=False, violinmode='group') # , legend={'traceorder':'reversed'}
 
     return fig
+
+
+def reset_psc_summary_img(fig, data_dir, task, summary_opt, cluster_opt):
+    
+    psc_fn = os.path.join(data_dir, 'multiecho', 'sub-all_task-' + task +'_desc-' + summary_opt +'PSCvalues.tsv')
+    df_psc = pd.read_csv(psc_fn, sep='\t')
+    data = []
+    ts_names = ['Echo 2', 'tSNR-combined', 'T2*-combined', 'TE-combined', 'T2*FIT-combined', 'T2*FIT']
+    ts_colnames = ['echo2', 'combTSNR', 'combT2STAR', 'combTE', 'combT2STARfit', 'T2STARfit']
+
+    for x, ts in enumerate(ts_colnames):
+        txt = ts + '_' + cluster_opt
+        temp_dat = df_psc[txt].to_numpy()
+        data.append(temp_dat)
+        fig.add_trace(go.Violin(y=data[x], line_color=sequential.Viridis[3+x], name=ts_names[x], points='all', pointpos=-0.4, meanline_visible=True, width=1, side='positive', box_visible=True))
+    fig.update_layout(xaxis_showgrid=True, yaxis_showgrid=True, xaxis_zeroline=False, violinmode='group') # , legend={'traceorder':'reversed'}
+    return fig
+
+
+def reset_psc_timeseries_img(fig, data_dir, sub, task, cluster_opt):
+
+    ts_names2 = ['Echo 2', 'tSNR-combined', 'T2*-combined', 'TE-combined', 'T2*FIT-combined', 'T2*FIT']
+    ts_colnames = ['echo2', 'combTSNR', 'combT2STAR', 'combTE', 'combT2STARfit', 'T2STARfit']
+
+    psc_ts_fn = os.path.join(data_dir, 'multiecho', sub+'_task-'+task+'_desc-PSCtimeseries.tsv')
+    df_psc_ts = pd.read_csv(psc_ts_fn, sep='\t')
+    data_pscts = []
+    for i, ts in enumerate(ts_colnames):
+        txt = ts + '_' + cluster_opt
+        data_pscts.append(df_psc_ts[txt].to_numpy())
+        fig.add_trace(go.Scatter(y=data_pscts[i], mode='lines', line = dict(color=sequential.Viridis[3+i], width=2), name=ts_names2[i] ))
+        fig.update_yaxes(showticklabels=True)
+
+    fig.update_layout(xaxis_showgrid=True, yaxis_showgrid=True, xaxis_zeroline=False)
+
+    return fig
