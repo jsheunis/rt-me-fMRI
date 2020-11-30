@@ -61,6 +61,7 @@ fmrwhy_workflow_offlineME
 % 2.3)  Normalise all tSNR images to MNI: fmrwhy_batch_normaliseWrite
 % 2.4)  Delineate tSNR values per tissue type and ROI ==> output TSV files
 fmrwhy_workflow_offlineMEreport
+rtme_script_generateMEtSNRtsvFiles % (need to check if this is necessary, perhaps does stuff thats already incorporated into fmrwhy_workflow_offlineMEreport)
 
 % ---------------------------------
 % STEP 3 - Subject level statistical analysis
@@ -92,19 +93,28 @@ fmrwhy_script_newThreshold1stlevel;
 %       - sub-all_task-Y_desc-peakCvalues.tsv
 %       - sub-all_task-Y_desc-meanTvalues.tsv
 %       - sub-all_task-Y_desc-peakTvalues.tsv
+% 4.2)  fmrwhy_script_neufepOfflineTCNR
 fmrwhy_script_neufepDetermineROImetrics;
+fmrwhy_script_neufepOfflineTCNR;
+
 
 
 % -------------------------------------------
 % STEP 5 - real-time Processing steps
 % -------------------------------------------
+fmrwhy_script_neufepRTME; % which runs: 1, 2, 3
+fmrwhy_script_rtme_initShort; %1
+fmrwhy_script_rtmeShort; %2
+fmrwhy_script_rtme_postprocessShort; %3 (saves many tsv files)
+fmrwhy_script_neufepRealtimeTCNR; % saves more tsv files
+%fmrwhy_script_MEgenerateRTCNRtsvFiles % in old folder, so probably not needed, but double check to make sure.
+fmrwhy_script_copytcnrFiles % check if needed (perhaps replace with jupyter notebook content)
 
 
 
-
-
-
-
+% Generates figures for methods article: these are duplicates (or close to it); decide which one is the correct one.
+fmrwhy_workflow_rtmeFigures;
+rtme_reproduce_methodsFigures
 
 % ---------------------------------
 % STEP X - Group level statistical analysis

@@ -57,8 +57,8 @@ The relaxation of the fMRI signal in a given voxel after transverse excitation,
 assuming a mono-exponential decay model, is estimated as:
 
 $$
-S\left(t\right)= S_{0} \cdot exp\left(
-\frac{-t}{T_{2}^{\ast}}\right) = S_{0} \cdot e^{-t \cdot R_{2}^{\ast}}
+S\left(t\right)= S_{0} \cdot e^{
+\frac{-t}{T_{2}^{\ast}}} = S_{0} \cdot e^{-t \cdot R_{2}^{\ast}}
 $$
 
 
@@ -66,13 +66,15 @@ hello
 
 
 $$
-S\left(t\right)= S_{0} \cdot exp\left(
-\frac{-t}{T_{2}^{\ast}}\right) + \varepsilon
+S\left(t\right)= S_{0} \cdot e^{
+\frac{-t}{T_{2}^{\ast}}} + \varepsilon = S_{0} \cdot e^{-t \cdot 
+R_{2}^{\ast}} + \varepsilon
 $$
 
 $$
-S\left(t\right) \approx S_{0} \cdot exp\left(
-\frac{-t}{T_{2}^{\ast}}\right) \approx S_{0} \cdot e^{-t \cdot R_{2}^{\ast}}
+S\left(t\right) \approx S_{0} \cdot e^{
+\frac{-t}{T_{2}^{\ast}}} = S_{0} \cdot e^{-t \cdot 
+R_{2}^{\ast}}
 $$
 
 $$

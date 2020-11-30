@@ -1,0 +1,420 @@
+File Path: Not all subjects/sessions/runs have the same scanning parameters.
+
+	Type:		Warning
+	File:		sub-031_task-emotionProcessingImagined_echo-1_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-emotionProcessingImagined_echo-1_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-emotionProcessingImagined_echo-2_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-emotionProcessingImagined_echo-2_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-emotionProcessingImagined_echo-3_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-emotionProcessingImagined_echo-3_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-emotionProcessing_echo-1_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-emotionProcessing_echo-1_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-emotionProcessing_echo-2_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-emotionProcessing_echo-2_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-emotionProcessing_echo-3_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-emotionProcessing_echo-3_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-fingerTappingImagined_echo-1_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-fingerTappingImagined_echo-1_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-fingerTappingImagined_echo-2_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-fingerTappingImagined_echo-2_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-fingerTappingImagined_echo-3_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-fingerTappingImagined_echo-3_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-fingerTapping_echo-1_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-fingerTapping_echo-1_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-fingerTapping_echo-2_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-fingerTapping_echo-2_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-fingerTapping_echo-3_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-fingerTapping_echo-3_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-rest_run-1_echo-1_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-rest_run-1_echo-1_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-rest_run-1_echo-2_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-rest_run-1_echo-2_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-rest_run-1_echo-3_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-rest_run-1_echo-3_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-rest_run-2_echo-1_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-rest_run-2_echo-1_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-rest_run-2_echo-2_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-rest_run-2_echo-2_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+	Type:		Warning
+	File:		sub-031_task-rest_run-2_echo-3_bold.nii
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-rest_run-2_echo-3_bold.nii
+	Reason:		 The most common resolution is: 3.50mm x 3.50mm x 3.50mm x 2.00s, This file has the resolution: 3.50mm x 3.50mm x 3.50mm x 2.01s.
+
+======================================================
+
+
+File Path: The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+
+	Type:		Warning
+	File:		sub-001_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-001/func/sub-001_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-001_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-001/func/sub-001_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-001_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-001/func/sub-001_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-002_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-002/func/sub-002_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-002_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-002/func/sub-002_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-002_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-002/func/sub-002_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-003_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-003/func/sub-003_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-003_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-003/func/sub-003_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-003_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-003/func/sub-003_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-004_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-004/func/sub-004_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-004_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-004/func/sub-004_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-004_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-004/func/sub-004_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-005_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-005/func/sub-005_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-005_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-005/func/sub-005_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-005_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-005/func/sub-005_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-006_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-006/func/sub-006_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-006_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-006/func/sub-006_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-006_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-006/func/sub-006_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-007_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-007/func/sub-007_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-007_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-007/func/sub-007_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-007_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-007/func/sub-007_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-010_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-010/func/sub-010_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-010_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-010/func/sub-010_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-010_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-010/func/sub-010_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-011_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-011/func/sub-011_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-011_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-011/func/sub-011_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-011_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-011/func/sub-011_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-012_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-012/func/sub-012_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-012_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-012/func/sub-012_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-012_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-012/func/sub-012_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-013_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-013/func/sub-013_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-013_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-013/func/sub-013_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-013_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-013/func/sub-013_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-015_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-015/func/sub-015_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-015_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-015/func/sub-015_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-015_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-015/func/sub-015_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-016_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-016/func/sub-016_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-016_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-016/func/sub-016_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-016_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-016/func/sub-016_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-017_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-017/func/sub-017_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-017_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-017/func/sub-017_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-017_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-017/func/sub-017_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-018_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-018/func/sub-018_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-018_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-018/func/sub-018_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-018_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-018/func/sub-018_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-019_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-019/func/sub-019_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-019_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-019/func/sub-019_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-019_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-019/func/sub-019_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-020_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-020/func/sub-020_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-020_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-020/func/sub-020_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-020_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-020/func/sub-020_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-021_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-021/func/sub-021_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-021_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-021/func/sub-021_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-021_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-021/func/sub-021_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-022_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-022/func/sub-022_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-022_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-022/func/sub-022_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-022_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-022/func/sub-022_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-023_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-023/func/sub-023_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-023_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-023/func/sub-023_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-023_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-023/func/sub-023_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-024_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-024/func/sub-024_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-024_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-024/func/sub-024_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-024_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-024/func/sub-024_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-025_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-025/func/sub-025_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-025_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-025/func/sub-025_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-025_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-025/func/sub-025_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-026_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-026/func/sub-026_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-026_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-026/func/sub-026_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-026_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-026/func/sub-026_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-027_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-027/func/sub-027_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-027_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-027/func/sub-027_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-027_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-027/func/sub-027_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-029_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-029/func/sub-029_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-029_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-029/func/sub-029_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-029_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-029/func/sub-029_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-030_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-030/func/sub-030_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-030_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-030/func/sub-030_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-030_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-030/func/sub-030_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-031_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-031_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-031_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-031/func/sub-031_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-032_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-032/func/sub-032_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-032_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-032/func/sub-032_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+	Type:		Warning
+	File:		sub-032_task-emotionProcessing_events.tsv
+	Location:		rt-me-fMRI/sub-032/func/sub-032_task-emotionProcessing_events.tsv
+	Reason:		The onset of the last event is after the total duration of the corresponding scan. This design is suspiciously long. 
+
+======================================================
+
+

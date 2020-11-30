@@ -1,3 +1,6 @@
+% IMPORTANT: these steps are already accounted for in the offlineMEreport script!!!
+
+
 %--------------------------------------------------------------------------
 settings_fn = '/Users/jheunis/Documents/MATLAB/fMRwhy/code/workflows/fmrwhy_settings_template.m';
 options = fmrwhy_defaults();
@@ -19,46 +22,38 @@ options = fmrwhy_bids_setupQcDerivDirs(options.bids_dir, options);
 % Validate settings
 options = fmrwhy_settings_validate(options)
 
+% Directories
 options.stats_dir = fullfile(options.bids_dir, 'derivatives', 'fmrwhy-stats');
 options.rt_dir = fullfile(options.bids_dir, 'derivatives', 'fmrwhy-rt');
 options.me_dir = fullfile(options.bids_dir, 'derivatives', 'fmrwhy-multiecho');
+options.dash_dir = fullfile(options.bids_dir, 'derivatives',  'fmrwhy-dash')
+options.dash_quality_dir = fullfile(options.dash_dir, 'quality')
+options.dash_multiecho_dir = fullfile(options.dash_dir, 'multiecho')
 
-options.dash_me_dir = '/Users/jheunis/Documents/Websites/rt-me-fmri-dash/bids/derivatives/fmrwhy-multiecho';
-options.dash_deriv_dir = '/Users/jheunis/Documents/Websites/rt-me-fmri-dash/bids/derivatives';
+% Tasks
+taskruns = {'fingerTapping', 'emotionProcessing', 'rest_run-2' 'fingerTappingImagined', 'emotionProcessingImagined'};
 
 % Set subject, sessions
-subs = {'001', '002', '003', '004', '005', '006', '007', '010', '011', '012', '013', '015', '016', '017', '018', '019', '020', '021', '022', '023', '024', '025', '026', '027', '029', '030', '031', '032'};
+subs = options.subjects;
+
 for s = 1:numel(subs)
     sub = subs{s};
     ses = '';
 
-    % Setup fmrwhy bids directories on subject level (this copies data from bids_dir)
-    options = fmrwhy_defaults_setupSubDirs(bids_dir, sub, options);
-
-    % Update workflow params with subject anatomical derivative filenames
-    options = fmrwhy_defaults_subAnat(bids_dir, sub, options);
+    % Update workflow options with subject anatomical derivative filenames
+    options = fmrwhy_bids_getAnatDerivs(options.bids_dir, sub, options);
 
     % load mask
-    masks = fmrwhy_util_loadOrientMasks(bids_dir, sub);
+    masks = fmrwhy_util_loadOrientMasks(options.bids_dir, sub, options);
     mask_fn = masks.brain_mask_fn;
 
-    options.me_dir = fullfile(options.deriv_dir, 'fmrwhy-multiecho');
     options.sub_dir_me = fullfile(options.me_dir, ['sub-' sub]);
     options.func_dir_me = fullfile(options.sub_dir_me, 'func');
-    dash_sub_dir = fullfile(options.dash_me_dir, ['sub-' sub]);
-    if ~exist(dash_sub_dir, 'dir')
-        mkdir(dash_sub_dir)
-    end
 
     % Loop through sessions, tasks, runs, etc
-    tasks = {'rest', 'motor', 'emotion'};
-    runs = {'1', '2'};
-    echo = '2';
+    for t = 1:numel(taskruns)
 
-
-    for t = 1:numel(tasks)
-
-        task = tasks{t};
+        task = taskruns{t};
 
         for r = 1:numel(runs)
             run = runs{r};
@@ -69,15 +64,15 @@ for s = 1:numel(subs)
             disp('------------')
             disp('------------')
 
-            % Filenames
-            options = fmrwhy_defaults_subFunc(bids_dir, sub, ses, task, run, echo, options);
-
-            % Calculate tSNR for each timeseries
+            % tSNR file for each timeseries
             rafunctional_fn = fullfile(options.func_dir_me, ['sub-' sub '_task-' task '_run-' run '_echo-2_desc-rapreproc_tsnr.nii']);
             combined_t2s_fn = fullfile(options.func_dir_me, ['sub-' sub '_task-' task '_run-' run '_desc-combinedMEt2star_tsnr.nii']);
             combined_tsnr_fn = fullfile(options.func_dir_me, ['sub-' sub '_task-' task '_run-' run '_desc-combinedMEtsnr_tsnr.nii']);
             combined_te_fn = fullfile(options.func_dir_me, ['sub-' sub '_task-' task '_run-' run '_desc-combinedMEte_tsnr.nii']);
-            tsnr_fns = {rafunctional_fn, combined_t2s_fn, combined_tsnr_fn, combined_te_fn};
+            combined_t2sFIT_fn = fullfile(options.func_dir_me, ['sub-' sub '_task-' task '_run-' run '_desc-combinedMEt2starFIT_tsnr.nii']);
+            t2sFIT_fn = fullfile(options.func_dir_me, ['sub-' sub '_task-' task '_run-' run '_desc-t2starFIT_tsnr.nii']);
+            
+            tsnr_fns = {rafunctional_fn, combined_t2s_fn, combined_tsnr_fn, combined_te_fn, combined_t2sFIT_fn, t2sFIT_fn};
             tsnr_output_fns = {};
             for i = 1:numel(tsnr_fns)
 
