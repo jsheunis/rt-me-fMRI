@@ -1,4 +1,4 @@
-# `rt-me-fMRI`dataset tree
+# `rt-me-fMRI` dataset tree
 
 
 ```
@@ -11,9 +11,6 @@ rt-me-fMRI
 ├── task-emotionProcessing_events.json
 ├── task-fingerTappingImagined_events.json
 ├── task-fingerTapping_events.json
-├── derivatives
-│   ├── fmrwhy-dash
-│   └── fmrwhy-qc
 ├── sub-001
 │   ├── anat
 │   │   └── sub-001_T1w.nii
@@ -96,6 +93,19 @@ rt-me-fMRI
 ├── sub-029
 ├── sub-030
 ├── sub-031
-└── sub-032
+├── sub-032
+└── derivatives
+    ├── fmrwhy-dash
+    └── fmrwhy-qc
+        ├── sub-001
+        │   ├── anat
+        │   ├── func
+        │   └── report_[yyyymmddhhmmss]
+        │       ├── assets
+        │       ├── img
+        │       └── sub-001_desc-QCreport_[yyyymmddhhmmss].html
+        ├── sub-002
+        :       :
+        └── sub-032
 
 ```
