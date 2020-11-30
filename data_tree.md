@@ -380,3 +380,59 @@ rt-me-fMRI
         └── sub-032
 
 ```
+
+
+
+```
+rt-me-fMRI
+.
+├── README
+├── dataset_description.json
+├── participants.tsv
+├── task-emotionProcessingImagined_events.json
+├── task-emotionProcessing_events.json
+├── task-fingerTappingImagined_events.json
+├── task-fingerTapping_events.json
+├── sub-001
+├── sub-002
+├── sub-003
+├── sub-004
+├── sub-005
+├── sub-006
+├── sub-007
+├── sub-010
+├── sub-011
+├── sub-012
+├── sub-013
+├── sub-015
+├── sub-016
+├── sub-017
+├── sub-018
+├── sub-019
+├── sub-020
+├── sub-021
+├── sub-022
+├── sub-023
+├── sub-024
+├── sub-025
+├── sub-026
+├── sub-027
+├── sub-029
+├── sub-030
+├── sub-031
+├── sub-032
+└── derivatives
+    ├── fmrwhy-dash
+    └── fmrwhy-qc
+        ├── sub-001
+        │   ├── anat
+        │   ├── func
+        │   └── report_[yyyymmddhhmmss]
+        │       ├── assets
+        │       ├── img
+        │       └── sub-001_desc-QCreport_[yyyymmddhhmmss].html
+        ├── sub-002
+        :       :
+        └── sub-032
+
+```
