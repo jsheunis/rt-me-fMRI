@@ -2,7 +2,7 @@
 
 [![Download the dataset from DataverseNL](https://img.shields.io/badge/download-BIDS%20dataset-9cf.svg)](https://doi.org/10.34894/R1TNL8) 
 [![Explore the data interactively](https://img.shields.io/badge/explore-Interactive%20Web%20App-ff69b4.svg)](https://rt-me-fmri.herokuapp.com/)
-[![Cite this work](https://img.shields.io/badge/cite-Data%20paper-brightgreen.svg)](https://doi.org/10.1101/2020.12.07.414490) 
+[![Cite this work](https://img.shields.io/badge/cite-Data%20paper-brightgreen.svg)](https://www.biorxiv.org/content/10.1101/2020.12.07.414490v1) 
 [![Cite this work](https://img.shields.io/badge/cite-Methods%20paper-green.svg)]() 
 [![Reproduce figures](https://img.shields.io/badge/reproduce-Figures%20(data%20paper)-red.svg)](https://github.com/jsheunis/rt-me-fMRI/blob/master/rt-me-fmri_reproduce_dataFigures.ipynb) 
 [![Reproduce figures](https://img.shields.io/badge/reproduce-Figures%20(methods%20paper)-orange.svg)](https://github.com/jsheunis/rt-me-fMRI/blob/master/rt-me-fmri_reproduce_methodsFigures.ipynb) 
@@ -15,11 +15,11 @@ This repository contains descriptions, code and data related to the real-time mu
 
 1. A dataset and related publication:
 
-    [**rt-me-fMRI: A task and resting state dataset for real-time, multi-echo fMRI methods development and validation**](https://doi.org/10.1101/2020.12.07.414490)
+    [**rt-me-fMRI: A task and resting state dataset for real-time, multi-echo fMRI methods development and validation**](https://www.biorxiv.org/content/10.1101/2020.12.07.414490v1)
 
 2. A methods publication:
 
-    [**Evaluating multi-echo fMRI combination and <i>T<sub>2</sub>\*</i>-mapping for offline and real-time BOLD sensitivity**]()
+    [**The effects of multi-echo fMRI combination and rapid <i>T<sub>2</sub>\*</i>-mapping on offline and real-time BOLD sensitivity**]()
 
 Below we provide more information and instructions regarding:
 - The dataset summary
@@ -31,7 +31,6 @@ Below we provide more information and instructions regarding:
 - How to contribute
 
 
-
 ## Data summary
 
 The `rt-me-fMRI` dataset is a multi-echo fMRI dataset (N=28 healthy participants) with four task-based and two resting state runs that were collected, curated and made available to the research community. Its main purpose is to advance the development of methods for real-time multi-echo functional magnetic resonance imaging analysis with applications in real-time quality control, adaptive paradigms, and neurofeedback, although the variety of experimental task paradigms supports a multitude of use cases. Tasks include finger tapping, emotional face and shape matching, imagined finger tapping and imagined emotion processing. This figure summarises the collected data:
@@ -40,7 +39,7 @@ The `rt-me-fMRI` dataset is a multi-echo fMRI dataset (N=28 healthy participants
 
 The full data description is available as a [data article](https://doi.org/10.1101/2020.12.07.414490) (currently a preprint on BioRxiv).
 
-Several depictions of the data tree can be viewed [here]()
+Several depictions of the data tree can be viewed [here](https://github.com/jsheunis/rt-me-fMRI/blob/master/data_tree.md)
 
 ## Downloading the data
 
@@ -78,8 +77,14 @@ The following notebooks contain code and descriptions that allows figures for th
 
 ## Software tools
 
+All (pre)processing and major data analysis steps for both the data article and methods article were done using the open source MATLAB-based `fMRwhy` toolbox (v0.0.1; https://github.com/jsheunis/fMRwhy), which was developed over the course of this project. `fMRwhy` has has conditional dependencies:
 
-
+- SPM12 (r7771; https://github.com/spm/spm12/releases/tag/r7771; Friston et al., 2007)
+- bids-matlab (v.0.0.1, https://github.com/jsheunis/bids-matlab/releases/tag/fv0.0.1)
+- Anatomy Toolbox (v3.0; Eickhoff et al., 2005)
+- dicm2nii (v0.2 from a forked repository; https://github.com/jsheunis/dicm2nii/releases/tag/v0.2)
+- TAPAS PhysIO (v3.2.0; https://github.com/translationalneuromodeling/tapas/releases/tag/v3.2.0; Kasper et al., 2017)
+- Raincloud plots (v1.1 https://github.com/RainCloudPlots/RainCloudPlots/releases/tag/v1.1; Allen et al., 2019).
 
 ## Citing this work
 
