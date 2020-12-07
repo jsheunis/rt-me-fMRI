@@ -3,7 +3,7 @@
 % -----
 clear;
 % Locate settings file
-settings_fn = '/Users/jheunis/Documents/MATLAB/fMRwhy/code/workflows/fmrwhy_settings_template.m';
+settings_fn = '/Users/jheunis/Documents/PYTHON/rtme-fMRI/matlab/fmrwhy_settings_rtmefMRI.m';
 % Get fmrwhy defaults
 options = fmrwhy_defaults();
 % Check fmrwhy dependencies
@@ -17,7 +17,7 @@ options = fmrwhy_settings_validate(options)
 % % Load the subjects
 % subs = options.subjects_output;
 
-figure_dir = fullfile(options.deriv_dir, 'rtme-figures');
+figure_dir = fullfile(options.deriv_dir, 'rtme-figures-v2');
 if ~exist(figure_dir, 'dir')
     mkdir(figure_dir);
 end
@@ -102,13 +102,21 @@ for d = 1:numel(descriptions)
     bold_nii = fullfile(options.deriv_dir, 'fmrwhy-multiecho', ['sub-' sub], 'func', filename);
     bold_vol_png = fullfile(figure_dir, strrep(filename, '_bold.nii', '_singleVol_bold.png'));
     bold_mean_png = fullfile(figure_dir, strrep(filename, '_bold.nii', '_mean_bold.png'));
-    
+
+    if d==6
+        cxs = [0 130];
+    else
+        cxs = [0 3000];
+    end
     if ~exist(bold_vol_png)
         [p, frm, rg, dim] = fmrwhy_util_readOrientNifti(bold_nii);
         bold_vol_img = fmrwhy_util_maskImage(double(p.nii.img(:,:,:,volume_nr)), mask_img_oriented);
         bold_mean_img = fmrwhy_util_maskImage(mean(double(p.nii.img(:,:,:,:)), 4), mask_img_oriented);
-        bold_vol_montage = fmrwhy_util_createStatsOverlayMontage(bold_vol_img(:,:,slices), [], [], 9, 1, '', 'gray', 'off', 'maxwidth', [], [], [], false, bold_vol_png);
-        bold_mean_montage = fmrwhy_util_createStatsOverlayMontage(bold_mean_img(:,:,slices), [], [], 9, 1, '', 'gray', 'off', 'maxwidth', [], [], [], false, bold_mean_png);
+        if d ==2
+            koekies = bold_mean_img;
+        end
+        bold_vol_montage = fmrwhy_util_createStatsOverlayMontage(bold_vol_img(:,:,slices), [], [], 9, 1, '', 'gray', 'off', 'maxwidth', cxs, [], [], true, bold_vol_png);
+        bold_mean_montage = fmrwhy_util_createStatsOverlayMontage(bold_mean_img(:,:,slices), [], [], 9, 1, '', 'gray', 'off', 'maxwidth', cxs, [], [], true, bold_mean_png);
     end
 end
 
@@ -137,7 +145,7 @@ for d = 1:numel(descriptions)
     if ~exist(tsnr_vol_png)
         [p, frm, rg, dim] = fmrwhy_util_readOrientNifti(tsnr_nii);
         tsnr_vol_img = fmrwhy_util_maskImage(double(p.nii.img(:,:,:,volume_nr)), mask_img_oriented);
-        tsnr_vol_montage = fmrwhy_util_createStatsOverlayMontage(tsnr_vol_img(:,:,slices), [], [], 9, 1, '', 'hot', 'off', 'maxwidth', [0 250], [], [], false, tsnr_vol_png);
+        tsnr_vol_montage = fmrwhy_util_createStatsOverlayMontage(tsnr_vol_img(:,:,slices), [], [], 9, 1, '', 'hot', 'off', 'maxwidth', [0 250], [], [], true, tsnr_vol_png);
     end
 end
 

@@ -18,7 +18,6 @@ metadata:
     MagneticFieldStrength: 3
     ParallelAcquisitionTechnique: SENSE
     BIDSVersion: '1.1.0'
-    InstitutionName: Kempenhaeghe Epilepsy Center
 
 func:
     rest1:

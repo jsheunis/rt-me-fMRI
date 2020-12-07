@@ -1,5 +1,6 @@
 # `rt-me-fMRI` dataset tree
 
+### Tree 1
 
 ```
 rt-me-fMRI
@@ -110,6 +111,7 @@ rt-me-fMRI
 
 ```
 
+### Tree 2
 
 ```
 rt-me-fMRI
@@ -153,7 +155,7 @@ rt-me-fMRI
 
 ```
 
-
+### Tree 3
 
 ```
 rt-me-fMRI
@@ -226,11 +228,9 @@ rt-me-fMRI
 ├── sub-032
 └── derivatives
 
-
-
 ```
 
-
+### Tree 4
 
 ```
 rt-me-fMRI
@@ -294,6 +294,8 @@ rt-me-fMRI
 :
 
 ```
+
+### Tree 5
 
 
 ```
@@ -381,7 +383,7 @@ rt-me-fMRI
 
 ```
 
-
+### Tree 6
 
 ```
 rt-me-fMRI

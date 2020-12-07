@@ -3,7 +3,7 @@
 % -----
 clear;
 % Locate settings file
-settings_fn = '/Users/jheunis/Documents/MATLAB/fMRwhy/code/workflows/fmrwhy_settings_template.m';
+settings_fn = '/Users/jheunis/Documents/PYTHON/rtme-fMRI/matlab/fmrwhy_settings_rtmefMRI.m';
 % Get fmrwhy defaults
 options = fmrwhy_defaults();
 % Check fmrwhy dependencies
