@@ -1,10 +1,11 @@
-% rtme_workflow_matlab
+%% rt-me-fmri_reproduce_matlabProcessing.m
 
-% The main script detailing the order in which all data were processed, and providing the code and instructions with which to do so.
-
-% Not meant to be executed fully as a standalone script; rather each step should be done individually, manually, and chronologically
-
-% Preceded by data preparation scripts (see relevant jupyter notebook)
+% This is the main script detailing the order in which all data were processed,
+% and providing the code and instructions with which to do so.
+% This script is not meant to be executed fully as a standalone script,
+% rather each step should be done individually, manually, and chronologically.
+% This script is preceded by data preparation scripts (see relevant jupyter notebook)
+% This script requires fMRwhy and its dependencies to be installed
 
 
 % -------
@@ -13,8 +14,9 @@
 % -------
 % -------
 
-% see fmrwhy_settings_RTME in this repo
-settings_fn = '/Users/jheunis/Documents/PYTHON/rtme-fMRI/matlab/fmrwhy_settings_RTME.m';
+% A settings file is required with prefilled details pertaining to the dataset and analysis
+% see fmrwhy_settings_rtmefMRI.m in this repo
+settings_fn = '<...>/matlab/fmrwhy_settings_rtmefMRI.m';
 
 
 % ------------------------------
@@ -23,6 +25,7 @@ settings_fn = '/Users/jheunis/Documents/PYTHON/rtme-fMRI/matlab/fmrwhy_settings_
 % ------------------------------
 % ------------------------------
 
+% Run minimal preprocessing steps and data quality processing
 % see fmrwhy_bids_workflowQC in fMRwhy
 fmrwhy_bids_workflowQC(settings_fn);
 
@@ -32,7 +35,6 @@ fmrwhy_bids_workflowQC(settings_fn);
 % Multi-echo processing pipeline
 % ------------------------------
 % ------------------------------
-
 
 % ----------------------------------
 % STEP 1 - fmrwhy_workflow_offlineME
@@ -47,7 +49,7 @@ fmrwhy_bids_workflowQC(settings_fn);
 %       - Prepare template data and run FIT multi-echo combination
 % 1.5)  Calculate tSNR for each combined timeseries
 % 1.6)  Smooth each combined timeseries, for later analysis purposes
-fmrwhy_workflow_offlineME
+fmrwhy_workflow_offlineME;
 
 % ----------------------------------------
 % STEP 2 - fmrwhy_workflow_offlineMEreport
@@ -60,8 +62,8 @@ fmrwhy_workflow_offlineME
 %       - Carpet plots for ROIs (fmrwhy_util_thePlotROI)
 % 2.3)  Normalise all tSNR images to MNI: fmrwhy_batch_normaliseWrite
 % 2.4)  Delineate tSNR values per tissue type and ROI ==> output TSV files
-fmrwhy_workflow_offlineMEreport
-rtme_script_generateMEtSNRtsvFiles % (need to check if this is necessary, perhaps does stuff thats already incorporated into fmrwhy_workflow_offlineMEreport)
+fmrwhy_workflow_offlineMEreport;
+rtme_script_generateMEtSNRtsvFiles; % (need to check if this is necessary, perhaps does stuff thats already incorporated into fmrwhy_workflow_offlineMEreport)
 
 % ---------------------------------
 % STEP 3 - Subject level statistical analysis
@@ -97,27 +99,13 @@ fmrwhy_script_newThreshold1stlevel;
 fmrwhy_script_neufepDetermineROImetrics;
 fmrwhy_script_neufepOfflineTCNR;
 
-
-
 % -------------------------------------------
-% STEP 5 - real-time Processing steps
+% STEP 5 - Real-time Processing steps
 % -------------------------------------------
 fmrwhy_script_neufepRTME; % which runs: 1, 2, 3
 fmrwhy_script_rtme_initShort; %1
 fmrwhy_script_rtmeShort; %2
 fmrwhy_script_rtme_postprocessShort; %3 (saves many tsv files)
 fmrwhy_script_neufepRealtimeTCNR; % saves more tsv files
-%fmrwhy_script_MEgenerateRTCNRtsvFiles % in old folder, so probably not needed, but double check to make sure.
-fmrwhy_script_copytcnrFiles % check if needed (perhaps replace with jupyter notebook content)
-
-
-
-% Generates figures for methods article: these are duplicates (or close to it); decide which one is the correct one.
-fmrwhy_workflow_rtmeFigures;
-rtme_reproduce_methodsFigures
-
-% ---------------------------------
-% STEP X - Group level statistical analysis
-% ---------------------------------
-
-
+fmrwhy_script_copytcnrFiles; % check if needed (perhaps replace with jupyter notebook content)
+rtme_reproduce_methodsFigures; % Generates figures for methods article

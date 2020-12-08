@@ -1,6 +1,4 @@
-% fmrwhy_settings_template
-% Template settings file for the fmrwhy_bids_workflowQC pipeline
-
+% Copied and altered from fmrwhy_settings_template, the template settings file for the fmrwhy_bids_workflowQC pipeline
 
 % ----------
 % Section 01
