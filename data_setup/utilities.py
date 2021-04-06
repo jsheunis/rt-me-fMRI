@@ -1,5 +1,14 @@
-import numpy as np
+import os
 import pandas as pd
+import numpy as np
+import plotly.graph_objs as go
+from plotly.colors import sequential, n_colors
+
+# Colormaps from https://colorbrewer2.org/#type=qualitative&scheme=Dark2&n=6
+colors = [['#a6cee3', '#1f78b4', '#b2df8a', '#33a02c', '#fb9a99', '#e31a1c'],
+           ['#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#ffff33'],
+           ['#8dd3c7', '#ffffb3', '#bebada', '#fb8072', '#80b1d3', '#fdb462'],
+           ['#1b9e77', '#d95f02', '#7570b3', '#e7298a', '#66a61e', '#e6ab02']]
 
 def appendRowToDf(main_df, block_df, event_type, txt_col):
     # ['onset', 'duration', 'response_time', 'button_pressed', 'trial_type']
@@ -198,3 +207,61 @@ def create_event_files(all_dfs, paradigms, dct_df, sub):
     dct_df[keys[2]] = events1_df
 
     return dct_df
+
+def reset_realtime_series_img(fig, rt_dir, sub, task, cluster_opt, psc_opt):
+
+    if psc_opt == 'glm':
+        psc_ts_fn = os.path.join(rt_dir, sub, sub + '_task-' + task + '_desc-' + cluster_opt + '_ROIpsc.tsv')
+        df_psc_ts = pd.read_csv(psc_ts_fn, sep='\t')
+        ts_names = ['Echo 2', 'tSNR-combined', 'T2*-combined', 'TE-combined', 'T2*FIT-combined', 'T2*FIT']
+        rtts_colnames = ['RTecho2', 'RTcombinedTSNR', 'RTcombinedT2STAR', 'RTcombinedTE', 'RTcombinedRTt2star', 'RTt2starFIT']
+        data_pscts = []
+        for i, ts in enumerate(rtts_colnames):
+            txt = 'glm_' + ts
+            fig.append(df_psc_ts[txt].to_numpy())
+            fig.add_trace(go.Scatter(y=data_pscts[i], mode='lines', line = dict(color=colors[3][x], width=2), name=ts_names[i] ))
+            fig.update_yaxes(showticklabels=True)
+        fig.update_layout(xaxis_showgrid=True, yaxis_showgrid=True, xaxis_zeroline=False)
+    else:
+        psc_ts_fn = os.path.join(rt_dir, sub, sub + '_task-' + task + '_desc-realtimeROIsignals_psc' + psc_opt + '.tsv')
+        df_psc_ts = pd.read_csv(psc_ts_fn, sep='\t')
+        ts_names = ['Echo 2', 'tSNR-combined', 'T2*-combined', 'TE-combined', 'T2*FIT-combined', 'T2*FIT']
+        rtts_colnames = ['RTecho2', 'RTcombinedTSNR', 'RTcombinedT2STAR', 'RTcombinedTE', 'RTcombinedRTt2star', 'RTt2starFIT']
+        data_pscts = []
+        for i, ts in enumerate(rtts_colnames):
+            txt = ts + '_' + cluster_opt
+            data_pscts.append(df_psc_ts[txt].to_numpy())
+            fig.add_trace(go.Scatter(y=data_pscts[i], mode='lines', line = dict(color=colors[3][i], width=2), name=ts_names[i] ))
+            fig.update_yaxes(showticklabels=True)
+        fig.update_layout(xaxis_showgrid=True, yaxis_showgrid=True, xaxis_zeroline=False, font=dict(size=16))
+
+    return fig
+
+def reset_realtime_series_img_frompd(fig, df, cluster_opt, psc_opt):
+
+    
+    if psc_opt == 'glm':
+        psc_ts_fn = os.path.join(rt_dir, sub, sub + '_task-' + task + '_desc-' + cluster_opt + '_ROIpsc.tsv')
+        df_psc_ts = pd.read_csv(psc_ts_fn, sep='\t')
+        ts_names = ['Echo 2', 'tSNR-combined', 'T2*-combined', 'TE-combined', 'T2*FIT-combined', 'T2*FIT']
+        rtts_colnames = ['RTecho2', 'RTcombinedTSNR', 'RTcombinedT2STAR', 'RTcombinedTE', 'RTcombinedRTt2star', 'RTt2starFIT']
+        data_pscts = []
+        for i, ts in enumerate(rtts_colnames):
+            txt = 'glm_' + ts
+            fig.append(df_psc_ts[txt].to_numpy())
+            fig.add_trace(go.Scatter(y=data_pscts[i], mode='lines', line = dict(color=colors[3][x], width=2), name=ts_names[i] ))
+            fig.update_yaxes(showticklabels=True)
+        fig.update_layout(xaxis_showgrid=True, yaxis_showgrid=True, xaxis_zeroline=False)
+    else:
+        df_psc_ts = df
+        ts_names = ['Echo 2', 'tSNR-combined', 'T2*-combined', 'TE-combined', 'T2*FIT-combined', 'T2*FIT']
+        rtts_colnames = ['RTecho2', 'RTcombinedTSNR', 'RTcombinedT2STAR', 'RTcombinedTE', 'RTcombinedRTt2star', 'RTt2starFIT']
+        data_pscts = []
+        for i, ts in enumerate(rtts_colnames):
+            txt = ts + '_' + cluster_opt
+            data_pscts.append(df_psc_ts[txt].to_numpy())
+            fig.add_trace(go.Scatter(y=data_pscts[i], mode='lines', line = dict(color=colors[3][i], width=2), name=ts_names[i] ))
+            fig.update_yaxes(showticklabels=True)
+        fig.update_layout(xaxis_showgrid=True, yaxis_showgrid=True, xaxis_zeroline=False, font=dict(size=16))
+
+    return fig
