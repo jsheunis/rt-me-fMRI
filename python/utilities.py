@@ -21,8 +21,8 @@ def reset_tsnr_summary(fig, data_dir, tsnr_region, tsnr_run):
 
     df_tsnrmean = pd.read_csv(tsnrmean_fn, sep='\t')
     data2 = []
-    ts_names2 = ['echo-2', 'combinedMEtsnr', 'combinedMEt2star', 'combinedMEte', 'combinedMEt2starFIT', 't2starFIT']
-    ts_names2_disp = ['Echo 2', 'tSNR-combined', 'T2*-combined', 'TE-combined', 'T2*FIT-combined', 'T2*FIT']
+    ts_names2 = ['echo-2', 'combinedMEtsnr', 'combinedMEte', 'combinedMEt2star', 'combinedMEt2starFIT', 't2starFIT']
+    ts_names2_disp = ['Echo 2', 'tSNR-combined', 'TE-combined', 'T2*-combined', 'T2*FIT-combined', 'T2*FIT']
 
     if tsnr_run == 'all runs':
         cols_tasksruns = ['fingerTapping', 'emotionProcessing', 'rest_run-2', 'fingerTappingImagined','emotionProcessingImagined']
@@ -54,19 +54,18 @@ def reset_tsnr_summary(fig, data_dir, tsnr_region, tsnr_run):
             showarrow=True,
             font=dict(
                 family="Courier New, monospace",
-                size=15,
-                color="#ffffff"
+                size=17,
+                color="#000000"
                 ),
             align="center",
-            arrowhead=2,
-            arrowsize=0.7,
-            arrowwidth=2,
-            arrowcolor="#ffffff",
-            # arrowcolor="#c7c7c7",
+            arrowhead=6,
+            arrowsize=0.5,
+            arrowwidth=1.5,
+            arrowcolor="#000000",
             ax=35,
             ay=-90,
-            bordercolor="#ffffff",
-            borderwidth=1.75,
+            bordercolor="#000000",
+            borderwidth=1.5,
             borderpad=4,
             bgcolor=colors[3][i],
             opacity=0.8
@@ -79,8 +78,8 @@ def reset_tval_summary_img(fig, data_dir, task, summary_opt, cluster_opt):
     tval_fn = os.path.join(data_dir, 'multiecho', 'sub-all_task-' + task + '_desc-' + summary_opt +'Tvalues.tsv')
     df_tval = pd.read_csv(tval_fn, sep='\t')
     data = []
-    ts_names = ['Echo 2', 'tSNR-combined', 'T2*-combined', 'TE-combined', 'T2*FIT-combined', 'T2*FIT']
-    ts_colnames = ['echo2', 'combTSNR', 'combT2STAR', 'combTE', 'combT2STARfit', 'T2STARfit']
+    ts_names = ['Echo 2', 'tSNR-combined', 'TE-combined', 'T2*-combined', 'T2*FIT-combined', 'T2*FIT']
+    ts_colnames = ['echo2', 'combTSNR', 'combTE', 'combT2STAR', 'combT2STARfit', 'T2STARfit']
 
     for x, ts in enumerate(ts_colnames):
         txt = ts + '_' + cluster_opt
@@ -102,19 +101,18 @@ def reset_tval_summary_img(fig, data_dir, task, summary_opt, cluster_opt):
             showarrow=True,
             font=dict(
                 family="Courier New, monospace",
-                size=15,
-                color="#ffffff"
+                size=17,
+                color="#000000"
                 ),
             align="center",
-            arrowhead=2,
-            arrowsize=0.7,
-            arrowwidth=2,
-            arrowcolor="#ffffff",
-            # arrowcolor="#c7c7c7",
+            arrowhead=6,
+            arrowsize=0.5,
+            arrowwidth=1.5,
+            arrowcolor="#000000",
             ax=35,
             ay=-90,
-            bordercolor="#ffffff",
-            borderwidth=1.75,
+            bordercolor="#000000",
+            borderwidth=1.5,
             borderpad=4,
             bgcolor=colors[3][i],
             opacity=0.8
@@ -129,8 +127,8 @@ def reset_psc_summary_img(fig, data_dir, task, summary_opt, cluster_opt):
     psc_fn = os.path.join(data_dir, 'multiecho', 'sub-all_task-' + task +'_desc-' + summary_opt +'PSCvalues.tsv')
     df_psc = pd.read_csv(psc_fn, sep='\t')
     data = []
-    ts_names = ['Echo 2', 'tSNR-combined', 'T2*-combined', 'TE-combined', 'T2*FIT-combined', 'T2*FIT']
-    ts_colnames = ['echo2', 'combTSNR', 'combT2STAR', 'combTE', 'combT2STARfit', 'T2STARfit']
+    ts_names = ['Echo 2', 'tSNR-combined', 'TE-combined', 'T2*-combined', 'T2*FIT-combined', 'T2*FIT']
+    ts_colnames = ['echo2', 'combTSNR', 'combTE', 'combT2STAR', 'combT2STARfit', 'T2STARfit']
 
     for x, ts in enumerate(ts_colnames):
         txt = ts + '_' + cluster_opt
@@ -151,19 +149,18 @@ def reset_psc_summary_img(fig, data_dir, task, summary_opt, cluster_opt):
             showarrow=True,
             font=dict(
                 family="Courier New, monospace",
-                size=15,
-                color="#ffffff"
+                size=17,
+                color="#000000"
                 ),
             align="center",
-            arrowhead=2,
-            arrowsize=0.7,
-            arrowwidth=2,
-            arrowcolor="#ffffff",
-            # arrowcolor="#c7c7c7",
+            arrowhead=6,
+            arrowsize=0.5,
+            arrowwidth=1.5,
+            arrowcolor="#000000",
             ax=35,
             ay=-90,
-            bordercolor="#ffffff",
-            borderwidth=1.75,
+            bordercolor="#000000",
+            borderwidth=1.5,
             borderpad=4,
             bgcolor=colors[3][i],
             opacity=0.8
@@ -174,8 +171,8 @@ def reset_psc_summary_img(fig, data_dir, task, summary_opt, cluster_opt):
 
 def reset_psc_timeseries_img(fig, data_dir, sub, task, cluster_opt):
 
-    ts_names2 = ['Echo 2', 'tSNR-combined', 'T2*-combined', 'TE-combined', 'T2*FIT-combined', 'T2*FIT']
-    ts_colnames = ['echo2', 'combTSNR', 'combT2STAR', 'combTE', 'combT2STARfit', 'T2STARfit']
+    ts_names2 = ['Echo 2', 'tSNR-combined', 'TE-combined', 'T2*-combined', 'T2*FIT-combined', 'T2*FIT']
+    ts_colnames = ['echo2', 'combTSNR', 'combTE', 'combT2STAR', 'combT2STARfit', 'T2STARfit']
 
     psc_ts_fn = os.path.join(data_dir, 'multiecho', sub+'_task-'+task+'_desc-PSCtimeseries.tsv')
     df_psc_ts = pd.read_csv(psc_ts_fn, sep='\t')
@@ -198,8 +195,8 @@ def reset_psc_cnr_img(fig, data_dir, cnr_opt, task, cluster_opt):
     df_cnr = pd.read_csv(cnr_fn, sep='\t')
 
     data = []
-    ts_names = ['Echo 2', 'tSNR-combined', 'T2*-combined', 'TE-combined', 'T2*FIT-combined', 'T2*FIT']
-    ts_colnames = ['echo2', 'combTSNR', 'combT2STAR', 'combTE', 'combT2STARfit', 'T2STARfit']
+    ts_names = ['Echo 2', 'tSNR-combined', 'TE-combined', 'T2*-combined', 'T2*FIT-combined', 'T2*FIT']
+    ts_colnames = ['echo2', 'combTSNR', 'combTE', 'combT2STAR', 'combT2STARfit', 'T2STARfit']
 
     # ['glm_RTecho2', 'kalm_RTecho2', 'glm_RTcombinedTSNR', 'kalm_RTcombinedTSNR', 'glm_RTcombinedT2STAR', 'kalm_RTcombinedT2STAR', 'glm_RTcombinedTE', 'kalm_RTcombinedTE', 'glm_RTcombinedRTt2star', 'kalm_RTcombinedRTt2star', 'glm_RTt2starFIT', 'kalm_RTt2starFIT', 'glm_RTs0FIT', 'kalm_RTs0FIT']
 
@@ -223,19 +220,18 @@ def reset_psc_cnr_img(fig, data_dir, cnr_opt, task, cluster_opt):
             showarrow=True,
             font=dict(
                 family="Courier New, monospace",
-                size=15,
-                color="#ffffff"
+                size=17,
+                color="#000000"
                 ),
             align="center",
-            arrowhead=2,
-            arrowsize=0.7,
-            arrowwidth=2,
-            arrowcolor="#ffffff",
-            # arrowcolor="#c7c7c7",
+            arrowhead=6,
+            arrowsize=0.5,
+            arrowwidth=1.5,
+            arrowcolor="#000000",
             ax=35,
             ay=-90,
-            bordercolor="#ffffff",
-            borderwidth=1.75,
+            bordercolor="#000000",
+            borderwidth=1.5,
             borderpad=4,
             bgcolor=colors[3][i],
             opacity=0.8
@@ -250,8 +246,8 @@ def reset_realtime_summary_img(fig, data_dir, cnr_opt, task, cluster_opt, psc_op
         cnr_fn = os.path.join(data_dir, 'realtime', 'sub-all_task-' + task + '_desc-' + cluster_opt +'_ROI' + cnr_opt + '.tsv')
         df_cnr = pd.read_csv(cnr_fn, sep='\t')
         data = []
-        ts_names = ['Echo 2', 'tSNR-combined', 'T2*-combined', 'TE-combined', 'T2*FIT-combined', 'T2*FIT']
-        rtts_colnames = ['RTecho2', 'RTcombinedTSNR', 'RTcombinedT2STAR', 'RTcombinedTE', 'RTcombinedRTt2star', 'RTt2starFIT']
+        ts_names = ['Echo 2', 'tSNR-combined', 'TE-combined', 'T2*-combined', 'T2*FIT-combined', 'T2*FIT']
+        rtts_colnames = ['RTecho2', 'RTcombinedTSNR', 'RTcombinedTE', 'RTcombinedT2STAR', 'RTcombinedRTt2star', 'RTt2starFIT']
         for x, ts in enumerate(rtts_colnames):
             txt = 'glm_' + ts
             temp_dat = df_cnr[txt].to_numpy()
@@ -262,8 +258,8 @@ def reset_realtime_summary_img(fig, data_dir, cnr_opt, task, cluster_opt, psc_op
         cnr_fn = os.path.join(data_dir, 'realtime', 'sub-all_task-' + task + '_desc-realtimeROI' + cnr_opt + '_' + psc_opt + '.tsv')
         df_cnr = pd.read_csv(cnr_fn, sep='\t')
         data = []
-        ts_names = ['Echo 2', 'tSNR-combined', 'T2*-combined', 'TE-combined', 'T2*FIT-combined', 'T2*FIT']
-        rtts_colnames = ['RTecho2', 'RTcombinedTSNR', 'RTcombinedT2STAR', 'RTcombinedTE', 'RTcombinedRTt2star', 'RTt2starFIT']
+        ts_names = ['Echo 2', 'tSNR-combined', 'TE-combined', 'T2*-combined', 'T2*FIT-combined', 'T2*FIT']
+        rtts_colnames = ['RTecho2', 'RTcombinedTSNR', 'RTcombinedTE', 'RTcombinedT2STAR', 'RTcombinedRTt2star', 'RTt2starFIT']
         # realtimeROItcnr
         for x, ts in enumerate(rtts_colnames):
             txt = ts + '_' + cluster_opt
@@ -284,19 +280,18 @@ def reset_realtime_summary_img(fig, data_dir, cnr_opt, task, cluster_opt, psc_op
             showarrow=True,
             font=dict(
                 family="Courier New, monospace",
-                size=15,
-                color="#ffffff"
+                size=17,
+                color="#000000"
                 ),
             align="center",
-            arrowhead=2,
-            arrowsize=0.7,
-            arrowwidth=2,
-            arrowcolor="#ffffff",
-            # arrowcolor="#c7c7c7",
+            arrowhead=6,
+            arrowsize=0.5,
+            arrowwidth=1.5,
+            arrowcolor="#000000",
             ax=35,
-            ay=-90,
-            bordercolor="#ffffff",
-            borderwidth=1.75,
+            ay=-100,
+            bordercolor="#000000",
+            borderwidth=1.5,
             borderpad=4,
             bgcolor=colors[3][i],
             opacity=0.8
@@ -309,8 +304,8 @@ def reset_realtime_series_img(fig, data_dir, sub, task, cluster_opt, psc_opt):
     if psc_opt == 'glm':
         psc_ts_fn = os.path.join(data_dir, 'realtime', sub + '_task-' + task + '_desc-' + cluster_opt + '_ROIpsc.tsv')
         df_psc_ts = pd.read_csv(psc_ts_fn, sep='\t')
-        ts_names = ['Echo 2', 'tSNR-combined', 'T2*-combined', 'TE-combined', 'T2*FIT-combined', 'T2*FIT']
-        rtts_colnames = ['RTecho2', 'RTcombinedTSNR', 'RTcombinedT2STAR', 'RTcombinedTE', 'RTcombinedRTt2star', 'RTt2starFIT']
+        ts_names = ['Echo 2', 'tSNR-combined', 'TE-combined', 'T2*-combined', 'T2*FIT-combined', 'T2*FIT']
+        rtts_colnames = ['RTecho2', 'RTcombinedTSNR', 'RTcombinedTE', 'RTcombinedT2STAR', 'RTcombinedRTt2star', 'RTt2starFIT']
         data_pscts = []
         for i, ts in enumerate(rtts_colnames):
             txt = 'glm_' + ts
@@ -321,8 +316,8 @@ def reset_realtime_series_img(fig, data_dir, sub, task, cluster_opt, psc_opt):
     else:
         psc_ts_fn = os.path.join(data_dir, 'realtime', sub + '_task-' + task + '_desc-realtimeROIsignals_psc' + psc_opt + '.tsv')
         df_psc_ts = pd.read_csv(psc_ts_fn, sep='\t')
-        ts_names = ['Echo 2', 'tSNR-combined', 'T2*-combined', 'TE-combined', 'T2*FIT-combined', 'T2*FIT']
-        rtts_colnames = ['RTecho2', 'RTcombinedTSNR', 'RTcombinedT2STAR', 'RTcombinedTE', 'RTcombinedRTt2star', 'RTt2starFIT']
+        ts_names = ['Echo 2', 'tSNR-combined', 'TE-combined', 'T2*-combined', 'T2*FIT-combined', 'T2*FIT']
+        rtts_colnames = ['RTecho2', 'RTcombinedTSNR', 'RTcombinedTE', 'RTcombinedT2STAR', 'RTcombinedRTt2star', 'RTt2starFIT']
         data_pscts = []
         for i, ts in enumerate(rtts_colnames):
             txt = ts + '_' + cluster_opt
