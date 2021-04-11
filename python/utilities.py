@@ -309,7 +309,7 @@ def reset_realtime_series_img(fig, data_dir, sub, task, cluster_opt, psc_opt):
         data_pscts = []
         for i, ts in enumerate(rtts_colnames):
             txt = 'glm_' + ts
-            fig.append(df_psc_ts[txt].to_numpy())
+            data_pscts.append(df_psc_ts[txt].to_numpy())
             fig.add_trace(go.Scatter(y=data_pscts[i], mode='lines', line = dict(color=colors[3][x], width=2), name=ts_names[i] ))
             fig.update_yaxes(showticklabels=True)
         fig.update_layout(xaxis_showgrid=True, yaxis_showgrid=True, xaxis_zeroline=False)
@@ -322,6 +322,45 @@ def reset_realtime_series_img(fig, data_dir, sub, task, cluster_opt, psc_opt):
         for i, ts in enumerate(rtts_colnames):
             txt = ts + '_' + cluster_opt
             data_pscts.append(df_psc_ts[txt].to_numpy())
+            fig.add_trace(go.Scatter(y=data_pscts[i], mode='lines', line = dict(color=colors[3][i], width=2), name=ts_names[i] ))
+            fig.update_yaxes(showticklabels=True)
+        fig.update_layout(xaxis_showgrid=True, yaxis_showgrid=True, xaxis_zeroline=False, font=dict(size=16))
+
+    return fig
+
+
+def reset_realtime_series_smoothed_img(fig, data_dir, sub, task, cluster_opt, psc_opt, window):
+
+    if psc_opt == 'glm':
+        psc_ts_fn = os.path.join(data_dir, 'realtime', sub + '_task-' + task + '_desc-' + cluster_opt + '_ROIpsc.tsv')
+        df_psc_ts = pd.read_csv(psc_ts_fn, sep='\t')
+        ts_names = ['Echo 2', 'tSNR-combined', 'TE-combined', 'T2*-combined', 'T2*FIT-combined', 'T2*FIT']
+        rtts_colnames = ['RTecho2', 'RTcombinedTSNR', 'RTcombinedTE', 'RTcombinedT2STAR', 'RTcombinedRTt2star', 'RTt2starFIT']
+        data_pscts = []
+        for i, ts in enumerate(rtts_colnames):
+            txt = 'glm_' + ts
+            data_pscts.append(df_psc_ts[txt].to_numpy())
+            fig.add_trace(go.Scatter(y=data_pscts[i], mode='lines', line = dict(color=colors[3][x], width=2), name=ts_names[i] ))
+            fig.update_yaxes(showticklabels=True)
+        fig.update_layout(xaxis_showgrid=True, yaxis_showgrid=True, xaxis_zeroline=False)
+    else:
+        psc_ts_fn = os.path.join(data_dir, 'realtime', sub + '_task-' + task + '_desc-realtimeROIsignals_psc' + psc_opt + '.tsv')
+        df_psc_ts = pd.read_csv(psc_ts_fn, sep='\t')
+        ts_names = ['Echo 2', 'tSNR-combined', 'TE-combined', 'T2*-combined', 'T2*FIT-combined', 'T2*FIT']
+        rtts_colnames = ['RTecho2', 'RTcombinedTSNR', 'RTcombinedTE', 'RTcombinedT2STAR', 'RTcombinedRTt2star', 'RTt2starFIT']
+        data_pscts = []
+        for i, ts in enumerate(rtts_colnames):
+            txt = ts + '_' + cluster_opt
+            
+            raw_data = df_psc_ts[txt].to_numpy()
+            filtered_data = np.zeros_like(raw_data)
+            for j, x in enumerate(raw_data):
+                if j < window:
+                    filtered_data[j] = np.mean(raw_data[0:j+1])
+                else:
+                    filtered_data[j] = np.mean(raw_data[j-window+1:j+1])
+
+            data_pscts.append(filtered_data)
             fig.add_trace(go.Scatter(y=data_pscts[i], mode='lines', line = dict(color=colors[3][i], width=2), name=ts_names[i] ))
             fig.update_yaxes(showticklabels=True)
         fig.update_layout(xaxis_showgrid=True, yaxis_showgrid=True, xaxis_zeroline=False, font=dict(size=16))
