@@ -2,8 +2,8 @@
 
 [![Download the dataset from DataverseNL](https://img.shields.io/badge/download-BIDS%20dataset-9cf.svg)](https://doi.org/10.34894/R1TNL8) 
 [![Explore the data interactively](https://img.shields.io/badge/explore-Interactive%20Web%20App-ff69b4.svg)](https://rt-me-fmri.herokuapp.com/)
-[![Read this work](https://img.shields.io/badge/read-Data%20paper-brightgreen.svg)](https://www.biorxiv.org/content/10.1101/2020.12.07.414490v1) 
-[![Read this work](https://img.shields.io/badge/read-Methods%20paper-green.svg)]() 
+[![Read this work](https://img.shields.io/badge/read-Data%20paper-brightgreen.svg)](https://doi.org/10.12688/f1000research.29988.1) 
+[![Read this work](https://img.shields.io/badge/read-Methods%20paper-green.svg)](https://doi.org/10.1101/2020.12.08.416768) 
 [![Reproduce figures](https://img.shields.io/badge/reproduce-Figures%20(data%20paper)-red.svg)](https://github.com/jsheunis/rt-me-fMRI/blob/master/rt-me-fmri_reproduce_dataFigures.ipynb) 
 [![Reproduce figures](https://img.shields.io/badge/reproduce-Figures%20(methods%20paper)-orange.svg)](https://github.com/jsheunis/rt-me-fMRI/blob/master/rt-me-fmri_reproduce_methodsFigures.ipynb) 
 [![Reproduce results](https://img.shields.io/badge/reproduce-Results%20(methods%20paper)-blueviolet.svg)](https://github.com/jsheunis/rt-me-fMRI/blob/master/rt-me-fmri_reproduce_resultsSummaries.ipynb) 
@@ -15,11 +15,11 @@ This repository contains descriptions, code and data related to the real-time mu
 
 1. A dataset and related publication:
 
-    [**rt-me-fMRI: A task and resting state dataset for real-time, multi-echo fMRI methods development and validation**](https://www.biorxiv.org/content/10.1101/2020.12.07.414490v1)
+    [**rt-me-fMRI: A task and resting state dataset for real-time, multi-echo fMRI methods development and validation**](https://doi.org/10.12688/f1000research.29988.1)
 
 2. A methods publication:
 
-    [**The effects of multi-echo fMRI combination and rapid <i>T<sub>2</sub>\*</i>-mapping on offline and real-time BOLD sensitivity**]()
+    [**The effects of multi-echo fMRI combination and rapid <i>T<sub>2</sub>\*</i>-mapping on offline and real-time BOLD sensitivity**](https://doi.org/10.1101/2020.12.08.416768)
 
 Below we provide more information and instructions regarding:
 - [The dataset summary](#summary)
@@ -39,7 +39,7 @@ The `rt-me-fMRI` dataset is a multi-echo fMRI dataset (N=28 healthy participants
 
 <img src="figures/data_article/fig1.png" alt="fig1" style="width: 90%; text-align: center"/>
 
-The full data description is available as a [data article](https://doi.org/10.1101/2020.12.07.414490) (currently a preprint on BioRxiv).
+The full data description is available as an F1000 [data article](https://doi.org/10.12688/f1000research.29988.1).
 
 Several depictions of the data tree can be viewed [here](https://github.com/jsheunis/rt-me-fMRI/blob/master/data_tree.md)
 
@@ -53,7 +53,7 @@ The dataset itself can be downloaded from DataverseNL [via this link](https://do
 
 The dataset was collected, processed and shared in accordance with the European Union's General Data Protection Regulation (GDPR) as approved by Data Protection Officers at the research institution. These specific conditions aim for personal data privacy to be prioritised while adhering to FAIR data standards ("findable, accessible, interoperable, reusable"). Procedures included de-identifying brain images (e.g. removing personally identifiable information from image filenames and metadata and removing facial features from T1-weighted images), converting the data to BIDS format, employing a Data Use Agreement, and keeping participants fully informed about each of these steps and the associated risks and benefits.
 
-Much of the work that went into this administrative process has been documented as part of the output of the [Open Brain Consent](https://open-brain-consent.readthedocs.io/en/stable/gdpr/index.html) Working Group, accessible [here](10.31234/osf.io/f6mnp).
+Much of the work that went into this administrative process has been documented as part of the output of the [Open Brain Consent](https://open-brain-consent.readthedocs.io/en/stable/gdpr/index.html) Working Group, accessible [here](https://doi.org/10.1002/hbm.25351).
 
 
 <div id="explore"></div>
@@ -112,12 +112,12 @@ Papers, book chapters, books, posters, oral presentations, and all other present
 
 In addition, please use the following citation when referring to the dataset:
 
->Heunis, S., Breeuwer, M., Caballero-Gaudes, C., Hellrung, L., Huijbers, W., Jansen, J.F.A., Lamerichs, R., Zinger, S., Aldenkamp, A.P., 2020. rt-me-fMRI: A task and resting state dataset for real-time, multi-echo fMRI methods development and validation. bioRxiv 2020.12.07.414490. https://doi.org/10.1101/2020.12.07.414490
+>Heunis S, Breeuwer M, Caballero-Gaudes C et al. rt-me-fMRI: a task and resting state dataset for real-time, multi-echo fMRI methods development and validation [version 1; peer review: 1 approved, 1 approved with reservations]. F1000Research 2021, 10:70 (https://doi.org/10.12688/f1000research.29988.1)
 
 
 And the following citation when referring to the methods article:
 
->Heunis, S., Breeuwer, M., Caballero-Gaudes, C., Hellrung, L., Huijbers, W., Jansen, J.F.A., Lamerichs, R., Zinger, S., Aldenkamp, A.P., 2020. The effects of multi-echo fMRI combination and rapid T2*-mapping on offline and real-time BOLD sensitivity. bioRxiv [tbd...]
+>Heunis, S., Breeuwer, M., Caballero-Gaudes, C., Hellrung, L., Huijbers, W., Jansen, J.F., Lamerichs, R., Zinger, S., Aldenkamp, A.P., 2020. The effects of multi-echo fMRI combination and rapid T2*-mapping on offline and real-time BOLD sensitivity. bioRxiv 2020.12.08.416768. https://doi.org/10.1101/2020.12.08.416768
 
 
 <div id="contribute"></div>
